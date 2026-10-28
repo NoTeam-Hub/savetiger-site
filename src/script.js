@@ -63,11 +63,28 @@
       var kind = btn.getAttribute('data-share');
       if (shareLinks[kind]) btn.setAttribute('href', shareLinks[kind]);
       if (kind === 'instagram') {
-        // Instagram has no web "share this link" address, so copy the link and open Instagram.
-        btn.addEventListener('click', function () {
+        // Instagram has no web "share this link" address. On phones and tablets, open the device's own share menu
+        // (Instagram and other apps appear there). Everywhere else, copy the link and open Instagram.
+        var igUrl = btn.getAttribute('href');
+        var copyAndOpen = function (openIt) {
           copyToClipboard(pageUrl || shareText, function (ok) {
             say(ok ? 'Link copied. Paste it into your Instagram story, bio or message.' : 'Opening Instagram. Copy this page\'s address from your browser to share it.');
           });
+          if (openIt) window.open(igUrl, '_blank', 'noopener');
+        };
+        btn.addEventListener('click', function (e) {
+          var touch = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+          if (touch && navigator.share) {
+            e.preventDefault();
+            navigator.share({ title: 'SAVE THE TIGERS', text: shareText, url: pageUrl })
+              .then(function () { say('Thanks for sharing!'); })
+              .catch(function (err) {
+                if (err && err.name === 'AbortError') return;   // the visitor closed the share menu
+                copyAndOpen(true);
+              });
+          } else {
+            copyAndOpen(false);                                  // the link itself opens Instagram in a new tab
+          }
         });
       }
     });
