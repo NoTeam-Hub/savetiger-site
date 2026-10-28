@@ -327,7 +327,7 @@
       fetch('https://' + vc.getAttribute('data-gc') + '.goatcounter.com/counter//.json')
         .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
         .then(function (d) {
-          if (d && d.count) {
+          if (d && d.count && parseInt(String(d.count).replace(/\D/g, ''), 10) > 0) {
             document.getElementById('visit-count').textContent = d.count;
             vc.hidden = false;
           }
