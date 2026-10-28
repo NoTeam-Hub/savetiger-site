@@ -1,0 +1,19 @@
+{
+  "name": "savetiger-site",
+  "version": "1.0.0",
+  "description": "SAVE THE TIGERS: static, SEO-optimised site for savethetiger.site",
+  "scripts": {
+    "build": "node build.mjs",
+    "start": "node build.mjs && npx --yes serve dist -l 4173",
+    "assets": "python3 tools/make-assets.py tools/qr-source.png"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "html-minifier-terser": "^7.2.0"
+  },
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  }
+}

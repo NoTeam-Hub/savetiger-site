@@ -1,0 +1,12 @@
+# robots.txt for {{SITE_URL}}
+# Crawl everything useful (including CSS/JS/images, which Google needs to render the page)
+# and keep crawlers out of junk or non-content paths.
+
+User-agent: *
+Allow: /
+Disallow: /404.html
+Disallow: /cdn-cgi/
+Disallow: /assets/support-upi
+Disallow: /*?*
+
+Sitemap: {{SITE_URL}}/sitemap.xml

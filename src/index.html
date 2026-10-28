@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="{{LANG}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--#include seo-head-->
+<style><!--#inline-css--></style>
+</head>
+<body id="top">
+
+<!-- Shared SVG defs: tiger paw symbol + gradient -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="pawGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FF9A1F"/>
+      <stop offset="1" stop-color="#E8590C"/>
+    </linearGradient>
+    <mask id="pawStripes">
+      <rect width="64" height="64" fill="#fff"/>
+      <path d="M17 41 Q24 43 28 50 M47 41 Q40 43 36 50" stroke="#000" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+    </mask>
+    <symbol id="paw" viewBox="0 0 64 64">
+      <g fill="url(#pawGrad)">
+        <ellipse cx="13" cy="27" rx="5.2" ry="7.2" transform="rotate(-24 13 27)"/>
+        <ellipse cx="25" cy="16" rx="5.4" ry="7.8" transform="rotate(-9 25 16)"/>
+        <ellipse cx="39" cy="16" rx="5.4" ry="7.8" transform="rotate(9 39 16)"/>
+        <ellipse cx="51" cy="27" rx="5.2" ry="7.2" transform="rotate(24 51 27)"/>
+        <path mask="url(#pawStripes)" d="M32 29 C41 29 49 37 49 46 C49 53 43.5 56.5 38 54.5 C34.5 53.3 29.5 53.3 26 54.5 C20.5 56.5 15 53 15 46 C15 37 23 29 32 29 Z"/>
+      </g>
+    </symbol>
+    <symbol id="paw-plain" viewBox="0 0 64 64">
+      <g fill="url(#pawGrad)">
+        <ellipse cx="13" cy="27" rx="5.2" ry="7.2" transform="rotate(-24 13 27)"/>
+        <ellipse cx="25" cy="16" rx="5.4" ry="7.8" transform="rotate(-9 25 16)"/>
+        <ellipse cx="39" cy="16" rx="5.4" ry="7.8" transform="rotate(9 39 16)"/>
+        <ellipse cx="51" cy="27" rx="5.2" ry="7.2" transform="rotate(24 51 27)"/>
+        <path d="M32 29 C41 29 49 37 49 46 C49 53 43.5 56.5 38 54.5 C34.5 53.3 29.5 53.3 26 54.5 C20.5 56.5 15 53 15 46 C15 37 23 29 32 29 Z"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="Save the Tigers — home">
+      <svg class="brand-mark" viewBox="0 0 92 72" aria-hidden="true">
+        <use href="#paw" x="0" y="6" width="64" height="64"/>
+        <use href="#paw" x="52" y="0" width="36" height="36" opacity=".3" transform="rotate(18 70 18)"/>
+      </svg>
+      <span class="brand-text"><small>SAVE THE</small><strong>TIGERS</strong></span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav-links" class="nav-links" aria-label="Primary">
+      <a href="#facts"><svg class="nav-paw" viewBox="0 0 64 64" aria-hidden="true"><use href="#paw" width="64" height="64"/></svg>Facts</a>
+      <a href="#trend"><svg class="nav-paw" viewBox="0 0 64 64" aria-hidden="true"><use href="#paw" width="64" height="64"/></svg>Trend</a>
+      <a href="#threats"><svg class="nav-paw" viewBox="0 0 64 64" aria-hidden="true"><use href="#paw" width="64" height="64"/></svg>Threats</a>
+      <a href="#action"><svg class="nav-paw" viewBox="0 0 64 64" aria-hidden="true"><use href="#paw" width="64" height="64"/></svg>Take action</a>
+      <a href="#sources"><svg class="nav-paw" viewBox="0 0 64 64" aria-hidden="true"><use href="#paw" width="64" height="64"/></svg>Sources</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero">
+    <svg class="hero-trail" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <use href="#paw" x="60"  y="470" width="110" height="110" transform="rotate(-20 115 525)"/>
+      <use href="#paw" x="230" y="330" width="90"  height="90"  transform="rotate(-8 275 375)"/>
+      <use href="#paw" x="380" y="420" width="110" height="110" transform="rotate(-24 435 475)"/>
+      <use href="#paw" x="560" y="260" width="90"  height="90"  transform="rotate(-10 605 305)"/>
+      <use href="#paw" x="720" y="360" width="110" height="110" transform="rotate(-22 775 415)"/>
+      <use href="#paw" x="900" y="180" width="90"  height="90"  transform="rotate(-8 945 225)"/>
+      <use href="#paw" x="1030" y="300" width="110" height="110" transform="rotate(-20 1085 355)"/>
+    </svg>
+    <div class="wrap hero-in">
+      <p class="eyebrow">Tiger conservation in India</p>
+      <h1>Save the <span class="grad">Tigers.</span><br>Protect India's apex predator.</h1>
+      <p class="lede">India is home to the majority of the world's wild tigers. The numbers have been climbing for fifteen years, but the recovery is fragile and uneven. Here is what the official data says, what still threatens them, and how you can help.</p>
+      <div class="hero-stat" aria-live="polite">
+        <div class="hero-num"><span data-count="3682">3,682</span></div>
+        <div class="hero-cap">
+          <strong>Estimated wild tigers in India</strong>
+          <span>All India Tiger Estimation, 2022 (statistical range 3,167–3,925)</span>
+        </div>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#action">Take action</a>
+        <a class="btn btn-ghost" href="#facts">See the numbers</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FACTS -->
+  <section id="facts" class="section">
+    <div class="wrap">
+      <p class="eyebrow">01 — The numbers</p>
+      <h2>What the official data says</h2>
+      <p class="sub">Every figure on this page is taken from government census and parliamentary records. Sources are listed at the bottom.</p>
+
+      <div class="cards4">
+        <article class="stat">
+          <div class="stat-num" data-count="3682">3,682</div>
+          <h3>Wild tigers, 2022</h3>
+          <p>Estimate from the fifth All India Tiger Estimation.</p>
+        </article>
+        <article class="stat">
+          <div class="stat-num">3,167–3,925</div>
+          <h3>Statistical range</h3>
+          <p>Tigers aren't counted one by one, so the estimate comes with a range.</p>
+        </article>
+        <article class="stat">
+          <div class="stat-num">+161%</div>
+          <h3>Since 2006</h3>
+          <p>From 1,411 tigers in the first scientific estimation.</p>
+        </article>
+        <article class="stat">
+          <div class="stat-num" data-count="2701">2,701</div>
+          <h3>Wildlife-crime cases</h3>
+          <p>Registered across all species, 2020–2024, per government data.</p>
+        </article>
+      </div>
+
+      <h3 class="subhead">Top four tiger states</h3>
+      <p class="sub small">Tiger estimates by state, 2018 vs 2022.</p>
+      <ul class="bars" aria-label="Tiger population by state, 2018 versus 2022">
+        <li style="--w22:100%; --w18:67%;">
+          <div class="bar-head"><span class="bar-name">Madhya Pradesh</span><span class="bar-val">785 <em>(2018: 526)</em></span></div>
+          <div class="bar-track"><div class="bar-18"></div><div class="bar-22"></div></div>
+        </li>
+        <li style="--w22:71.7%; --w18:66.8%;">
+          <div class="bar-head"><span class="bar-name">Karnataka</span><span class="bar-val">563 <em>(2018: 524)</em></span></div>
+          <div class="bar-track"><div class="bar-18"></div><div class="bar-22"></div></div>
+        </li>
+        <li style="--w22:71.3%; --w18:56.3%;">
+          <div class="bar-head"><span class="bar-name">Uttarakhand</span><span class="bar-val">560 <em>(2018: 442)</em></span></div>
+          <div class="bar-track"><div class="bar-18"></div><div class="bar-22"></div></div>
+        </li>
+        <li style="--w22:56.6%; --w18:39.7%;">
+          <div class="bar-head"><span class="bar-name">Maharashtra</span><span class="bar-val">444 <em>(2018: 312)</em></span></div>
+          <div class="bar-track"><div class="bar-18"></div><div class="bar-22"></div></div>
+        </li>
+      </ul>
+      <p class="legend"><span class="dot d18"></span> 2018 &nbsp; <span class="dot d22"></span> 2022</p>
+    </div>
+  </section>
+
+  <!-- TREND -->
+  <section id="trend" class="section alt">
+    <div class="wrap">
+      <p class="eyebrow">02 — Growth over time</p>
+      <h2>Fifteen years of recovery</h2>
+      <p class="sub">India's national tiger estimate has been repeated every four years since 2006. Every point below is an official estimate, not a projection.</p>
+
+      <div class="chart-card">
+        <div id="chart" class="chart" role="img" aria-label="Line chart of estimated tigers in India: 1,411 in 2006, 1,706 in 2010, 2,226 in 2014, 2,967 in 2018 and 3,682 in 2022."></div>
+        <table class="data-table">
+          <caption>Estimated wild tigers in India by census year</caption>
+          <thead><tr><th scope="col">Year</th><th scope="col">Estimated tigers</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">2006</th><td>1,411</td></tr>
+            <tr><th scope="row">2010</th><td>1,706</td></tr>
+            <tr><th scope="row">2014</th><td>2,226</td></tr>
+            <tr><th scope="row">2018</th><td>2,967</td></tr>
+            <tr><th scope="row">2022</th><td>3,682</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- THREATS -->
+  <section id="threats" class="section">
+    <div class="wrap">
+      <p class="eyebrow">03 — The challenges</p>
+      <h2>What tigers still face</h2>
+      <p class="sub">A rising national total doesn't mean every landscape is secure. In the 2018 and 2022 estimates, Mizoram and Nagaland each recorded zero tigers.</p>
+
+      <div class="cards3">
+        <article class="threat">
+          <h3>Habitat loss &amp; fragmentation</h3>
+          <p>Roads, mining, farming and growing settlements cut the corridors tigers need to disperse, find mates and reach new territory. Isolated populations are far more vulnerable.</p>
+          <p class="help"><strong>What helps:</strong> protecting wildlife corridors and keeping reserves connected.</p>
+        </article>
+        <article class="threat">
+          <h3>Poaching &amp; illegal trade</h3>
+          <p>Organised wildlife crime targets tiger skins and body parts. Across all species, India registered 2,701 wildlife-crime cases between 2020 and 2024.</p>
+          <p class="help"><strong>What helps:</strong> intelligence sharing, trained front-line staff, and public reporting of suspicious activity.</p>
+        </article>
+        <article class="threat">
+          <h3>Human–tiger conflict</h3>
+          <p>As tiger numbers rise and people live closer to forests, livestock losses and retaliation become more likely, hurting both families and tigers.</p>
+          <p class="help"><strong>What helps:</strong> quick compensation, early-warning systems and community-led programmes.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACTION -->
+  <section id="action" class="section alt">
+    <div class="wrap">
+      <p class="eyebrow">04 — Take action</p>
+      <h2>Do more for tigers</h2>
+      <p class="sub">Support the organisations doing the work, report wildlife crime, and travel responsibly.</p>
+
+      <div class="cards3 links">
+        <a class="link-card" href="https://donate.wwfindia.org/protect-our-tigers.php" target="_blank" rel="noopener noreferrer">
+          <span class="tag">Donate</span>
+          <h3>WWF-India</h3>
+          <p>Funds corridor protection, field monitoring and community conflict programmes. Online donations on this page are for Indian nationals; donations are eligible for 80G tax relief.</p>
+          <span class="go">donate.wwfindia.org →</span>
+        </a>
+        <a class="link-card" href="https://www.wti.org.in" target="_blank" rel="noopener noreferrer">
+          <span class="tag">Support</span>
+          <h3>Wildlife Trust of India</h3>
+          <p>Works on wildlife rescue, enforcement and law, conflict mitigation and training front-line forest staff.</p>
+          <span class="go">wti.org.in →</span>
+        </a>
+        <a class="link-card" href="https://ntca.gov.in/" target="_blank" rel="noopener noreferrer">
+          <span class="tag">Official</span>
+          <h3>National Tiger Conservation Authority</h3>
+          <p>The statutory body that oversees Project Tiger and publishes tiger status reports.</p>
+          <span class="go">ntca.gov.in →</span>
+        </a>
+        <a class="link-card" href="https://static.pib.gov.in/WriteReadData/specificdocs/documents/2024/nov/doc20241125451801.pdf" target="_blank" rel="noopener noreferrer">
+          <span class="tag">Learn</span>
+          <h3>Read the census data</h3>
+          <p>State-by-state tiger estimates for 2006 to 2022, as published by the Government of India's Press Information Bureau (PDF).</p>
+          <span class="go">pib.gov.in →</span>
+        </a>
+        <div class="link-card report">
+          <span class="tag warn">Report</span>
+          <h3>Report poaching or illegal trade</h3>
+          <p>A 2022 environment ministry notice says the national toll-free number <a href="tel:18001119334"><strong>1800 11 9334</strong></a> can be used to report illegal wildlife trade and poaching. You can also contact your local forest department. Please confirm current numbers on official sites.</p>
+          <a class="go" href="https://moef.gov.in/wildlife-crime-control-bureau" target="_blank" rel="noopener noreferrer">Wildlife Crime Control Bureau →</a>
+        </div>
+        <div class="link-card safari">
+          <span class="tag">Travel</span>
+          <h3>Visit tigers responsibly</h3>
+          <ul>
+            <li>Choose licensed operators and follow forest department rules.</li>
+            <li>Keep quiet, keep your distance, never chase or crowd an animal.</li>
+            <li>Don't feed wildlife or leave litter.</li>
+            <li>Don't post live locations of sightings.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="subhead">Spread the stripes</h3>
+      <p class="sub small">Add a sticker to your website or blog. Each snippet is self-contained and links back to this page.</p>
+
+      <div class="theme-switch" role="radiogroup" aria-label="Sticker theme">
+        <button type="button" role="radio" aria-checked="true" data-theme="dark" class="on">Dark</button>
+        <button type="button" role="radio" aria-checked="false" data-theme="light">Light</button>
+      </div>
+
+      <div id="stickers" class="stickers"></div>
+      <p class="sr-only" id="copy-status" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <!-- SOURCES -->
+  <section id="sources" class="section">
+    <div class="wrap">
+      <p class="eyebrow">Sources</p>
+      <h2>Where the numbers come from</h2>
+      <ul class="sources">
+        <li><a href="https://static.pib.gov.in/WriteReadData/specificdocs/documents/2024/nov/doc20241125451801.pdf" target="_blank" rel="noopener noreferrer">Press Information Bureau, Annexure: tiger estimates by state, 2006–2022</a></li>
+        <li><a href="https://rsdebate.nic.in/bitstream/123456789/754721/1/PQ_266_05122024_U1160_p148_p151.pdf" target="_blank" rel="noopener noreferrer">Ministry of Environment, Forest and Climate Change, parliamentary answer (Dec 2024): 3,682 tigers, range 3,167–3,925</a></li>
+        <li><a href="https://ntca.gov.in/about-us/" target="_blank" rel="noopener noreferrer">National Tiger Conservation Authority: About us</a></li>
+        <li><a href="https://www.deccanherald.com/dhie/news-and-trends/2025/08/05/wildlife-crime-cases-in-india-decline-significantly-govt" target="_blank" rel="noopener noreferrer">Deccan Herald (Aug 2025): 2,701 wildlife-crime cases 2020–2024, from Lok Sabha reply</a></li>
+        <li><a href="https://moef.gov.in/uploads/2022/11/Wildlife-Toll-Free-Number-09112022.pdf" target="_blank" rel="noopener noreferrer">MoEFCC notice (Nov 2022): toll-free number for wildlife crime</a></li>
+        <li><a href="https://www.wwfindia.org/about_wwf/priority_species/bengal_tiger/work_for_tiger" target="_blank" rel="noopener noreferrer">WWF-India: work for tiger conservation</a></li>
+      </ul>
+      <p class="note">Latest completed national estimate: 2022. Figures are estimates with statistical uncertainty. This is an independent awareness project and is not affiliated with any government body or organisation listed above.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <section class="support" aria-labelledby="support-title">
+    <div class="wrap">
+      <details class="legal-item support-fold" id="support">
+        <summary><svg class="legal-paw" viewBox="0 0 64 64" aria-hidden="true"><use href="#paw" width="64" height="64"/></svg>Support this site</summary>
+        <div class="support-body">
+      <div class="support-card">
+        <svg class="support-paw" viewBox="0 0 64 64" aria-hidden="true"><use href="#paw" width="64" height="64"/></svg>
+        <div class="support-copy">
+          <p class="eyebrow">Support this site</p>
+          <h2 id="support-title">Keep the stripes alive</h2>
+          <p>This site is free, with no ads and no sign-up. If it's useful, a small tip helps cover its upkeep. Totally optional.</p>
+          <p class="support-note">Tips go to the site's maintainer, not to a conservation charity. To help tigers directly, see the organisations under <a href="#action">Take action</a>.</p>
+        </div>
+        <div class="support-qr">
+          <div class="qr-frame">
+            <picture><source type="image/webp" srcset="{{ASSET_BASE}}assets/support-upi.webp"><img id="upi-qr" src="{{ASSET_BASE}}assets/support-upi.png" width="168" height="168" loading="lazy" decoding="async" alt="UPI QR code to support Save the Tigers"></picture>
+            <p class="qr-missing" hidden>QR code unavailable right now.</p>
+          </div>
+          <p class="qr-label">SCAN WITH ANY UPI APP</p>
+          <button type="button" class="tip-btn" id="tip-sent">&#9829; I've sent a tip</button>
+        </div>
+      </div>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <section class="share" aria-labelledby="share-title">
+    <div class="wrap">
+      <h2 id="share-title">Share this page</h2>
+      <p class="share-sub">Every share helps more people notice India's tigers.</p>
+      <div class="share-row">
+        <a class="share-btn" data-share="whatsapp" href="https://wa.me/?text=SAVE%20THE%20TIGERS" target="_blank" rel="noopener noreferrer" aria-label="Share on WhatsApp">
+          <span class="paw-wrap">
+            <svg class="paw-bg" viewBox="0 0 64 64" aria-hidden="true"><use href="#paw-plain" width="64" height="64"/></svg>
+            <svg class="paw-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path transform="translate(7 7) scale(.42)" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill="currentColor" stroke="none"/></svg>
+          </span>
+          <span class="share-label">WhatsApp</span>
+        </a>
+        <a class="share-btn" data-share="x" href="https://x.com/intent/post?text=SAVE%20THE%20TIGERS" target="_blank" rel="noopener noreferrer" aria-label="Share on X">
+          <span class="paw-wrap">
+            <svg class="paw-bg" viewBox="0 0 64 64" aria-hidden="true"><use href="#paw-plain" width="64" height="64"/></svg>
+            <svg class="paw-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4.5l14 15M19 4.5l-14 15" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>
+          </span>
+          <span class="share-label">X</span>
+        </a>
+        <a class="share-btn" data-share="instagram" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Copy link and open Instagram">
+          <span class="paw-wrap">
+            <svg class="paw-bg" viewBox="0 0 64 64" aria-hidden="true"><use href="#paw-plain" width="64" height="64"/></svg>
+            <svg class="paw-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor" stroke="none"/></svg>
+          </span>
+          <span class="share-label">Instagram</span>
+        </a>
+        <a class="share-btn" data-share="email" href="mailto:?subject=SAVE%20THE%20TIGERS" aria-label="Share by email">
+          <span class="paw-wrap">
+            <svg class="paw-bg" viewBox="0 0 64 64" aria-hidden="true"><use href="#paw-plain" width="64" height="64"/></svg>
+            <svg class="paw-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor" stroke="none"/></svg>
+          </span>
+          <span class="share-label">Email</span>
+        </a>
+      </div>
+      <p class="share-status" id="share-status" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <section class="legal" aria-labelledby="legal-title">
+    <div class="wrap">
+      <h2 id="legal-title">Legal &amp; policies</h2>
+      <p class="legal-updated">Last updated: 27 October 2026</p>
+
+      <details class="legal-item" id="disclaimer" name="legal">
+        <summary><svg class="legal-paw" viewBox="0 0 64 64" aria-hidden="true"><use href="#paw" width="64" height="64"/></svg>Disclaimer</summary>
+        <div class="legal-body">
+          <p><strong>Independent awareness project.</strong> SAVE THE TIGERS is not a government body, charity or conservation organisation, and is not affiliated with, endorsed by, or acting for the National Tiger Conservation Authority, the Government of India, WWF-India, Wildlife Trust of India or any other organisation mentioned or linked on this site.</p>
+          <p><strong>Information only.</strong> Content is provided for general information and awareness. It is not scientific, legal, financial or professional advice. Tiger figures are official <em>estimates</em> with statistical uncertainty, they describe the period shown (latest completed national estimate: 2022), and they may be revised or become outdated. We make reasonable efforts to be accurate but give no guarantee that everything is complete, current or error-free.</p>
+          <p><strong>Links and contact numbers.</strong> Links, donation pages and phone numbers belong to third parties and may change or stop working. Please confirm details on the organisation's official website before donating or reporting an incident.</p>
+          <p><strong>Wildlife safety.</strong> Nothing here encourages you to approach, follow, feed or disturb wild animals. Follow the rules of the forest department and licensed operators when visiting protected areas.</p>
+        </div>
+      </details>
+
+      <details class="legal-item" id="privacy" name="legal">
+        <summary><svg class="legal-paw" viewBox="0 0 64 64" aria-hidden="true"><use href="#paw" width="64" height="64"/></svg>Privacy Policy</summary>
+        <div class="legal-body">
+          <!--if:counter--><p><strong>In short:</strong> this site does not ask for, collect or store your personal information. It has no accounts, forms, comments, advertising or tracking cookies. The only measurement it uses is a small, privacy-focused visitor counter (see below).</p><!--endif:counter-->
+          <!--if:nocounter--><p><strong>In short:</strong> this site does not ask for, collect or store your personal information. It has no accounts, forms, comments, advertising, analytics or tracking cookies.</p><!--endif:nocounter-->
+          <h3>What happens in your browser</h3>
+          <p>The page's scripts run on your device to draw the chart, animate numbers and build sticker code. When you press "Copy embed code", the code is placed on your own clipboard. Nothing you do on the page is sent to us.</p>
+          <h3>Hosting logs</h3>
+          <p>Like any website, the company that hosts this site may automatically record technical data such as your IP address, browser type, device type and the pages requested, for security and to keep the service running. That data is handled under the hosting provider's own privacy policy. We do not use it to identify or profile visitors.</p>
+          <!--if:counter-->
+          <h3>Visitor counter</h3>
+          <p>This site uses <a href="https://www.goatcounter.com/" target="_blank" rel="noopener noreferrer">GoatCounter</a>, a privacy-focused analytics service, to count page views and to show the small view counter in the footer. GoatCounter does not use cookies and does not track visitors with unique identifiers or persistently store personal data. It records basic technical information such as the page viewed, the referring website, browser details, screen size and approximate location. See GoatCounter's own privacy policy for details.</p>
+          <!--endif:counter-->
+          <h3>Tips and UPI payments</h3>
+          <p>If you choose to send a tip, the payment is made entirely through your own UPI app and bank, not through this site. This site never sees your bank details. Please note that in UPI payments the recipient's payment app or bank statement may show your name or UPI ID.</p>
+          <h3>Other websites</h3>
+          <p>Links to other websites (for example donation pages and government sites) take you away from this site. Their privacy practices are their own, so please read their policies.</p>
+          <h3>Children</h3>
+          <p>This site is general-audience and does not knowingly collect information from anyone, including children.</p>
+          <h3>Changes</h3>
+          <p>If this changes (for example, if advertising or a contact form is added), this policy will be updated before the change goes live. Questions? See the Contact section below.</p>
+        </div>
+      </details>
+
+      <details class="legal-item" id="terms" name="legal">
+        <summary><svg class="legal-paw" viewBox="0 0 64 64" aria-hidden="true"><use href="#paw" width="64" height="64"/></svg>Terms of Use</summary>
+        <div class="legal-body">
+          <p>By using this website you agree to these terms. If you don't agree, please don't use the site.</p>
+          <ul>
+            <li><strong>Purpose.</strong> The site exists to raise awareness about tiger conservation in India. It is offered free of charge.</li>
+            <li><strong>Acceptable use.</strong> Use the site lawfully and respectfully. Don't attempt to disrupt, overload, scrape at scale, or gain unauthorised access to it, and don't present the site or its content as official, or as endorsed by any organisation it mentions.</li>
+            <li><strong>Embeddable stickers.</strong> You may add the provided stickers to your own website or blog, as long as you keep the link back to this site and don't alter them in a misleading way.</li>
+            <li><strong>Intellectual property.</strong> The design, text, code, logo and paw graphics of this site belong to its maintainer unless stated otherwise. Official census data comes from the public sources listed in the Sources section. Names and marks of other organisations belong to their owners. You may quote short extracts with a link back to this site; please ask before reusing the logo or design.</li>
+            <li><strong>No warranty.</strong> The site and its content are provided "as is" and "as available", without warranties of any kind, to the fullest extent permitted by law.</li>
+            <li><strong>Limitation of liability.</strong> To the fullest extent permitted by law, the maintainer is not liable for any loss or damage arising from use of, or reliance on, this site or the third-party websites it links to.</li>
+            <li><strong>Changes.</strong> These terms, and the site itself, may be updated, suspended or withdrawn at any time. Continued use after changes means you accept them.</li>
+            <li><strong>Governing law.</strong> These terms are governed by the laws of India.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="legal-item" id="tips" name="legal">
+        <summary><svg class="legal-paw" viewBox="0 0 64 64" aria-hidden="true"><use href="#paw" width="64" height="64"/></svg>Tips &amp; support</summary>
+        <div class="legal-body">
+          <p>Tips are completely optional, voluntary gifts to the site's maintainer to help cover the cost of running and maintaining this site.</p>
+          <ul>
+            <li>Tips are <strong>not donations to a charity or conservation organisation</strong>. No receipt or tax certificate (such as 80G) is issued, and a tip does not entitle you to any goods, services or special access.</li>
+            <li>To support tigers directly, please use the organisations listed under "Take action" and follow their own donation terms.</li>
+            <li>Payments are processed by your UPI app and bank. For payment problems, contact them. If you sent a tip by mistake, you can reach us through the Contact section.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="legal-item" id="copyright" name="legal">
+        <summary><svg class="legal-paw" viewBox="0 0 64 64" aria-hidden="true"><use href="#paw" width="64" height="64"/></svg>Copyright &amp; credits</summary>
+        <div class="legal-body">
+          <p>&copy; <span class="year-copy">2026</span> SAVE THE TIGERS. All rights reserved, except where stated below.</p>
+          <ul>
+            <li>The logo, paw graphics and page design are original to this site.</li>
+            <li>Tiger population figures are taken from the All India Tiger Estimation as published by the Government of India. Other figures are cited in the Sources section. Facts and official statistics are used for information, with attribution.</li>
+            <li>This site uses no third-party photographs or fonts, and no advertising trackers.</li>
+            <li>If you believe something on this site infringes your rights, please tell us through the Contact section and we will look into it promptly.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="legal-item" id="contact" name="legal">
+        <summary><svg class="legal-paw" viewBox="0 0 64 64" aria-hidden="true"><use href="#paw" width="64" height="64"/></svg>Contact</summary>
+        <div class="legal-body">
+          <p>For questions, corrections, privacy requests or copyright concerns, email <a href="mailto:ashish.narayann@gmail.com">ashish.narayann@gmail.com</a>.</p>
+          <p>To report poaching or illegal wildlife trade, don't write to us. Contact the authorities listed under "Take action" or your local forest department.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <div class="wrap foot-in">
+    <a class="brand" href="#top" aria-label="Save the Tigers — back to top">
+      <svg class="brand-mark" viewBox="0 0 92 72" aria-hidden="true">
+        <use href="#paw" x="0" y="6" width="64" height="64"/>
+        <use href="#paw" x="52" y="0" width="36" height="36" opacity=".3" transform="rotate(18 70 18)"/>
+      </svg>
+      <span class="brand-text"><small>SAVE THE</small><strong>TIGERS</strong></span>
+    </a>
+    <div class="foot-meta">
+      <p><a class="copy-link" href="./">&copy; <span id="year">{{YEAR}}</span> Save The Tigers</a></p>
+      <nav class="legal-links" aria-label="Legal">
+        <a href="#disclaimer">Disclaimer</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#terms">Terms</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <!--if:counter-->
+      <p class="visits" id="visit-counter" data-gc="{{GC_CODE}}" title="Privacy-friendly view counter. No cookies." hidden><svg class="visit-paw" viewBox="0 0 64 64" aria-hidden="true"><use href="#paw" width="64" height="64"/></svg><span id="visit-count"></span> views</p>
+      <!--endif:counter-->
+    </div>
+  </div>
+</footer>
+
+<dialog id="thanks" class="thanks" aria-labelledby="thanks-title">
+  <svg class="thanks-paw" viewBox="0 0 64 64" aria-hidden="true"><use href="#paw" width="64" height="64"/></svg>
+  <h2 id="thanks-title">Thank you, truly.</h2>
+  <p>Your tip helps keep this site online and free for everyone. Every visit, share and sticker helps more people notice India's tigers too.</p>
+  <button type="button" class="btn btn-primary" id="thanks-close">Close</button>
+</dialog>
+
+<script src="{{ASSET_BASE}}assets/{{JS_FILE}}" defer></script>
+<!--if:counter-->
+<script async data-goatcounter="https://{{GC_CODE}}.goatcounter.com/count" src="https://gc.zgo.at/count.js"></script>
+<!--endif:counter-->
+</body>
+</html>

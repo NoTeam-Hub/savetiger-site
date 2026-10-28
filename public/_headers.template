@@ -1,0 +1,14 @@
+# Security + caching headers.
+# Used by Cloudflare Pages and Netlify. GitHub Pages ignores this file (it cannot set custom headers).
+# Generated into dist/_headers by build.mjs. The Content-Security-Policy value is built from site.config.json.
+
+/*
+  Content-Security-Policy: {{CSP}}
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+
+# Only the JS bundle has a content hash in its file name, so only it is cached "forever".
+/assets/app.*
+  Cache-Control: public, max-age=31536000, immutable
