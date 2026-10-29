@@ -108,7 +108,7 @@ function mapSchema(page, cfg, ctx) {
       inLanguage: cfg.lang,
       spatialCoverage: { "@type": "Place", name: "India" },
       isBasedOn: page.dataset.source,
-      creator: { "@id": `${site}/#organization` },
+      creator: { "@type": "Organization", name: cfg.siteName, url: `${site}/` },
     });
   }
   return { "@context": "https://schema.org", "@graph": graph };
