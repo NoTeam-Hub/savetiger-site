@@ -21,6 +21,95 @@
       "schema": "home"
     },
     {
+      "path": "/maps/",
+      "src": "pages/maps.html",
+      "out": "maps/index.html",
+      "assetBase": "/",
+      "title": "Tiger Maps of India | Save The Tigers",
+      "ogTitle": "Tiger maps of India: reserves, population by state and landscapes",
+      "description": "Explore India's tigers on maps: all tiger reserves, official population estimates by state from 2006 to 2022, and the five tiger landscapes.",
+      "ogType": "website",
+      "indexable": true,
+      "schema": "map",
+      "section": "maps",
+      "maps": true,
+      "breadcrumb": [],
+      "crumbName": "Maps"
+    },
+    {
+      "path": "/tiger-reserves-india/",
+      "src": "pages/reserves.html",
+      "out": "tiger-reserves-india/index.html",
+      "assetBase": "/",
+      "title": "Tiger Reserves of India Map (All 58) | Save The Tigers",
+      "ogTitle": "Map of India's 58 tiger reserves",
+      "description": "Interactive map and table of India's 58 tiger reserves: state, year notified and area. Filter by state. Free, ad-free and built from public records.",
+      "ogType": "website",
+      "indexable": true,
+      "schema": "map",
+      "section": "maps",
+      "maps": true,
+      "breadcrumb": [
+        {
+          "name": "Maps",
+          "path": "/maps/"
+        }
+      ],
+      "crumbName": "Tiger reserves"
+    },
+    {
+      "path": "/tiger-population-by-state/",
+      "src": "pages/population.html",
+      "out": "tiger-population-by-state/index.html",
+      "assetBase": "/",
+      "title": "Tigers in Each Indian State, 2006 to 2022 | Save The Tigers",
+      "ogTitle": "How many tigers are in each Indian state? Map, 2006 to 2022",
+      "description": "Map of estimated wild tigers in every Indian state for 2006, 2010, 2014, 2018 and 2022, from the official All India Tiger Estimation.",
+      "ogType": "website",
+      "indexable": true,
+      "schema": "map",
+      "section": "maps",
+      "maps": true,
+      "breadcrumb": [
+        {
+          "name": "Maps",
+          "path": "/maps/"
+        }
+      ],
+      "crumbName": "Tigers by state",
+      "dataset": {
+        "name": "Estimated wild tigers by Indian state, 2006 to 2022",
+        "description": "State-wise estimates from the All India Tiger Estimation (2006, 2010, 2014, 2018, 2022) as published by the Government of India.",
+        "source": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2024/nov/doc20241125451801.pdf"
+      }
+    },
+    {
+      "path": "/tiger-landscapes-india/",
+      "src": "pages/landscapes.html",
+      "out": "tiger-landscapes-india/index.html",
+      "assetBase": "/",
+      "title": "Tiger Landscapes of India Map | Save The Tigers",
+      "ogTitle": "India's five tiger landscapes, mapped, with 2022 totals",
+      "description": "See India's five tiger landscapes on a map, from the Shivalik-Gangetic plain to the Sundarbans, with official 2022 totals and growth since 2006.",
+      "ogType": "website",
+      "indexable": true,
+      "schema": "map",
+      "section": "maps",
+      "maps": true,
+      "breadcrumb": [
+        {
+          "name": "Maps",
+          "path": "/maps/"
+        }
+      ],
+      "crumbName": "Tiger landscapes",
+      "dataset": {
+        "name": "Estimated wild tigers by landscape, 2006 to 2022",
+        "description": "Landscape-wise estimates from the All India Tiger Estimation as published by the Government of India.",
+        "source": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2024/nov/doc20241125451801.pdf"
+      }
+    },
+    {
       "path": "/404.html",
       "src": "404.html",
       "out": "404.html",

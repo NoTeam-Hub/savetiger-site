@@ -10,17 +10,22 @@ This is a single content page. A framework would add JavaScript and complexity f
 
 ```
 site.config.json        domain, titles, descriptions, counter code (edit this first)
+maps.mjs                build-time SVG map generator (reads data/*.json)
+data/                   tigers.json (census figures), reserves.json, india-map.json (outline + projection)
 build.mjs               build: minify, SEO head, JSON-LD, sitemap, robots, headers
 schema.mjs              Schema.org structured data
 src/
   index.html            home page template
   404.html              not-found page (noindex)
+  pages/                the four map pages (maps, reserves, population, landscapes)
+  maps.js / maps.css    map interactions and styles (loaded on map pages only)
   styles.css            styles (inlined into <head> at build)
   script.js             counters, chart, stickers, share buttons, counter
   favicon.ico
   assets/               logo, icons, OG image, QR (WebP + PNG)
   partials/
     seo-head.html       reusable SEO head (title, canonical, robots, OG, Twitter, JSON-LD)
+    header.html, footer.html, svg-defs.html, scripts.html, shell-top/bottom.html   shared page parts (<!--#include name-->)
     sitemap.template.xml
 public/                 copied to the site root (robots.txt, CNAME, manifest, _headers.template)
 tools/make-assets.py    regenerates icons, OG image and the optimised QR (needs Pillow)
@@ -108,6 +113,14 @@ Alternative with better security headers: connect the same GitHub repository to 
 2. Do the same in Bing Webmaster Tools (it can import from Search Console).
 3. Test the share preview with the platforms' own debuggers, and run [PageSpeed Insights](https://pagespeed.web.dev/) on mobile and desktop.
 4. If the old `savethetiger.vercel.app` site is still up anywhere, set a permanent (301) redirect from it to the new domain, or take it down.
+
+## Maps
+
+Four pages are generated at build time from `data/`: `/maps/` (hub with a decorative paw trail), `/tiger-reserves-india/`, `/tiger-population-by-state/` and `/tiger-landscapes-india/`. They are inline SVG (no map library, no tiles) and the tables carry the same data, so they work without JavaScript.
+
+- Update census numbers in `data/tigers.json`; reserves in `data/reserves.json` (`displayLat/displayLon` nudge a dot into its own state).
+- State outlines come from `data/india-map.json` (MapSVG via @svg-maps/india, CC BY 4.0, credited in the footer). The outline matches India's boundary as claimed by the Government of India (all of Jammu & Kashmir and Ladakh, including Gilgit-Baltistan and Aksai Chin). It was checked against DataMeet's CC0 `india-composite.geojson`, which is built to the same claim. It is simplified, so it is not a legal survey reference. `tools/calibrate-map.mjs --mercator --write` re-fits the projection if you swap the shapes.
+- Exact tiger or pugmark locations are deliberately not shown (poaching risk).
 
 ## Phase 2: structure for better search visibility
 

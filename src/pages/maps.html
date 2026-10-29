@@ -1,0 +1,43 @@
+<!--#include shell-top-->
+  <section class="section maps-hero">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span aria-current="page">Maps</span></nav>
+      <p class="eyebrow">Maps</p>
+      <h1 class="ph">Where India's tigers live</h1>
+      <p class="lede">Three maps built from official records: the protected tiger reserves, how many tigers each state holds, and the five landscapes that the national census groups them into.</p>
+      <div class="trail-card">
+        {{MAP_TRAIL}}
+        <p class="trail-cap">An illustrative trail linking the five landscapes. It is decoration, not the route of any real animal.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap">
+      <h2>Choose a map</h2>
+      <div class="map-cards">
+        <a class="map-link" href="/tiger-reserves-india/">
+          <svg class="nav-paw" viewBox="0 0 64 64" aria-hidden="true"><use href="#paw" width="64" height="64"/></svg>
+          <h3>Tiger reserves</h3>
+          <p>{{RESERVE_COUNT}} protected reserves across {{RESERVE_STATE_COUNT}} states, sized by area. Pick a dot or filter by state to see when each was notified.</p>
+          <span class="go">Open the map</span>
+        </a>
+        <a class="map-link" href="/tiger-population-by-state/">
+          <svg class="nav-paw" viewBox="0 0 64 64" aria-hidden="true"><use href="#paw" width="64" height="64"/></svg>
+          <h3>Tigers by state</h3>
+          <p>Every state shaded by its estimated tiger count. Step through 2006, 2010, 2014, 2018 and 2022 and watch the recovery spread.</p>
+          <span class="go">Open the map</span>
+        </a>
+        <a class="map-link" href="/tiger-landscapes-india/">
+          <svg class="nav-paw" viewBox="0 0 64 64" aria-hidden="true"><use href="#paw" width="64" height="64"/></svg>
+          <h3>Tiger landscapes</h3>
+          <p>Shivalik-Gangetic, Central India, Western Ghats, North-East and the Sundarbans: the regions tigers are counted in, with their totals.</p>
+          <span class="go">Open the map</span>
+        </a>
+      </div>
+      <h2 class="h-gap">Why there are no footprint maps</h2>
+      <p class="sub">Tiger pugmarks and camera-trap locations are real, but publishing exact positions would hand poachers a map. Official reports share counts by state and landscape for the same reason, and so do we. If you see signs of poaching, call your forest department or the authorities listed under <a href="/#action">Take action</a>.</p>
+      <!--#include map-disclaimer-->
+    </div>
+  </section>
+<!--#include shell-bottom-->

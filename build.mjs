@@ -16,6 +16,7 @@ import { gzipSync } from "node:zlib";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { schemaFor } from "./schema.mjs";
+import { loadMaps } from "./maps.mjs";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const SRC = path.join(ROOT, "src");
@@ -88,6 +89,8 @@ await mkdir(path.join(DIST, "assets"), { recursive: true });
 
 // ---------- CSS + JS ----------
 const css = (await transform(await read(path.join(SRC, "styles.css")), { loader: "css", minify: true })).code.trim();
+const mapsCss = (await transform(await read(path.join(SRC, "maps.css")), { loader: "css", minify: true })).code.trim();
+const mapVars = await loadMaps(ROOT);
 const js = await build({
   entryPoints: [path.join(SRC, "script.js")],
   bundle: true,
@@ -100,6 +103,18 @@ const js = await build({
   metafile: true,
 });
 const jsFile = Object.keys(js.metafile.outputs).map((p) => path.basename(p)).find((n) => n.endsWith(".js"));
+const mjs = await build({
+  entryPoints: [path.join(SRC, "maps.js")],
+  bundle: true,
+  minify: true,
+  format: "iife",
+  target: ["es2019"],
+  outdir: path.join(DIST, "assets"),
+  entryNames: "maps.[hash]",
+  legalComments: "none",
+  metafile: true,
+});
+const mapsJsFile = Object.keys(mjs.metafile.outputs).map((p) => path.basename(p)).find((n) => n.endsWith(".js"));
 
 // ---------- static assets ----------
 await cp(path.join(SRC, "assets"), path.join(DIST, "assets"), { recursive: true });
@@ -122,12 +137,22 @@ for (const name of await readdir(PUB)) {
 }
 
 // ---------- pages ----------
-const headPartial = await read(path.join(SRC, "partials", "seo-head.html"));
+const partials = {};
+for (const f of await readdir(path.join(SRC, "partials"))) {
+  if (f.endsWith(".html")) partials[f.replace(/\.html$/, "")] = await read(path.join(SRC, "partials", f));
+}
 const year = String(new Date().getFullYear());
 const outputs = [];
 for (const page of cfg.pages) {
   let html = await read(path.join(SRC, page.src));
-  html = html.replace("<!--#include seo-head-->", () => headPartial).replace("<!--#inline-css-->", () => css);
+  for (let pass = 0; pass < 3; pass++) {
+    html = html.replace(/<!--#include ([\w-]+)-->/g, (m, name) => {
+      if (!(name in partials)) fail(`unknown include "${name}" in ${page.src}`);
+      return partials[name];
+    });
+  }
+  html = html.replace("<!--#inline-css-->", () => css + (page.maps ? mapsCss : ""));
+  html = cond(html, "maps", !!page.maps);
 
   html = cond(html, "indexable", page.indexable);
   html = cond(html, "counter", !!gc);
@@ -138,6 +163,11 @@ for (const page of cfg.pages) {
   const canonical = `${cfg.siteUrl}${page.path}`;
   const vars = {
     ...siteVars,
+    ...mapVars,
+    HOME: page.path === "/" ? "" : "/",
+    MAPS_CURRENT: page.section === "maps" ? ' aria-current="page"' : "",
+    MAPS_JS_FILE: mapsJsFile,
+    PAGE_PATH: page.path,
     TITLE: esc(page.title),
     DESCRIPTION: esc(page.description),
     ROBOTS: page.indexable ? "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" : "noindex, nofollow",
@@ -163,6 +193,7 @@ for (const page of cfg.pages) {
     minifyCSS: false,
     minifyJS: false,
   });
+  await mkdir(path.dirname(path.join(DIST, page.out)), { recursive: true });
   await writeFile(path.join(DIST, page.out), html);
   outputs.push({ page, file: page.out, html });
 }
@@ -209,8 +240,10 @@ const size = async (p) => (await stat(path.join(DIST, p))).size;
 console.log(`\nBuilt ${cfg.siteUrl}  (lastmod ${lastmod}, counter ${gc ? "on: " + gc : "off"})`);
 for (const { file, html, page } of outputs) {
   const raw = Buffer.byteLength(html);
-  console.log(`  ${file.padEnd(12)} ${String(raw).padStart(7)} B   gzip ${String(gzipSync(html).length).padStart(6)} B   title ${page.title.length}/60   desc ${page.description.length}/160`);
+  console.log(`  ${file.padEnd(34)} ${String(raw).padStart(7)} B   gzip ${String(gzipSync(html).length).padStart(6)} B   title ${page.title.length}/60   desc ${page.description.length}/160`);
 }
 const jsRaw = await size(`assets/${jsFile}`);
 console.log(`  ${jsFile.padEnd(20)} ${String(jsRaw).padStart(7)} B   gzip ${String(gzipSync(await readFile(path.join(DIST, "assets", jsFile))).length).padStart(6)} B`);
+const mjsRaw = await size(`assets/${mapsJsFile}`);
+console.log(`  ${mapsJsFile.padEnd(20)} ${String(mjsRaw).padStart(7)} B   gzip ${String(gzipSync(await readFile(path.join(DIST, "assets", mapsJsFile))).length).padStart(6)} B   (map pages only)`);
 console.log(`  inline CSS           ${String(Buffer.byteLength(css)).padStart(7)} B   gzip ${String(gzipSync(css).length).padStart(6)} B\n`);

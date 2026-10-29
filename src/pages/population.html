@@ -1,0 +1,44 @@
+<!--#include shell-top-->
+  <section class="section">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/maps/">Maps</a><span aria-hidden="true">/</span><span aria-current="page">Tigers by state</span></nav>
+      <p class="eyebrow">Map 2</p>
+      <h1 class="ph">Tigers in each Indian state</h1>
+      <p class="lede">The All India Tiger Estimation counts tigers by state every four years. In 2022 the highest figure was {{TOP_STATE_N}} in {{TOP_STATE}}. Choose a year to see how the numbers have changed since 2006.</p>
+
+      <div class="map-tools">
+        <span id="year-label">Census year</span>
+        <div class="year-switch" role="radiogroup" aria-labelledby="year-label" id="years">{{YEAR_BUTTONS}}</div>
+      </div>
+
+      <div class="map-layout" data-map="states" data-years='{{YEARS_JSON}}'>
+        <div class="map-card">
+          {{MAP_STATES}}
+          <ul class="legend">{{STATE_LEGEND}}</ul>
+        </div>
+        <aside class="map-panel" id="panel" aria-live="polite" aria-label="Selected state">
+          <p class="panel-empty">Hover over or select a state to see its estimate.</p>
+          <div class="panel-body" hidden>
+            <p class="eyebrow" data-f="year"></p>
+            <h2 data-f="name"></h2>
+            <p class="big"><span data-f="value"></span> <small>tigers</small></p>
+            <p class="chg" data-f="change"></p>
+          </div>
+        </aside>
+      </div>
+
+      <h2 class="h-gap">The numbers</h2>
+      <div class="table-scroll">
+        <table class="data-table state-table" id="state-table">
+          <caption>Estimated tigers by state, 2006 to 2022</caption>
+          <thead><tr><th scope="col">State</th>{{STATE_HEAD}}</tr></thead>
+          <tbody>{{STATE_ROWS}}</tbody>
+          <tfoot><tr><th scope="row">India (published total)</th>{{STATE_TOTAL}}</tr></tfoot>
+        </table>
+      </div>
+      <p class="note" id="note-wb">* West Bengal combines two rows of the official table: northern West Bengal and the Sundarbans. A dash means no figure was reported for that state and year, which is different from zero. State rows can differ slightly from the published national total (in 2022 they add to 3,686 against 3,682), because the source table's own subtotals differ in small ways. Estimates carry statistical uncertainty: the 2022 national range is 3,167 to 3,925. Source: <a href="https://static.pib.gov.in/WriteReadData/specificdocs/documents/2024/nov/doc20241125451801.pdf" target="_blank" rel="noopener noreferrer">Press Information Bureau, Annexure I</a>. States left grey are not in the national table, so no figure is shown for them.</p>
+      <!--#include map-disclaimer-->
+      <!--#include map-more-->
+    </div>
+  </section>
+<!--#include shell-bottom-->

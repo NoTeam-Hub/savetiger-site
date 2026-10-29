@@ -1,0 +1,538 @@
+{
+ "asOf": "2026-04",
+ "count": 58,
+ "note": "Approximate reserve locations (a single representative point per reserve, not boundaries). Compiled from the NTCA/Wikipedia list of tiger reserves of India; 58 reserves as of April 2026.",
+ "reserves": [
+  {
+   "id": "bandipur",
+   "name": "Bandipur",
+   "state": "Karnataka",
+   "notified": 2007,
+   "areaKm2": 1456.3,
+   "lat": 11.6617,
+   "lon": 76.6272
+  },
+  {
+   "id": "corbett",
+   "name": "Corbett",
+   "state": "Uttarakhand",
+   "notified": 2010,
+   "areaKm2": 1288.31,
+   "lat": 29.5486,
+   "lon": 78.9353
+  },
+  {
+   "id": "kanha",
+   "name": "Kanha",
+   "state": "Madhya Pradesh",
+   "notified": 2007,
+   "areaKm2": 2051.79,
+   "lat": 22.2275,
+   "lon": 80.645
+  },
+  {
+   "id": "manas",
+   "name": "Manas",
+   "state": "Assam",
+   "notified": 2008,
+   "areaKm2": 2837.1,
+   "lat": 26.7167,
+   "lon": 90.9333
+  },
+  {
+   "id": "melghat",
+   "name": "Melghat",
+   "state": "Maharashtra",
+   "notified": 2007,
+   "areaKm2": 2768.52,
+   "lat": 21.4458,
+   "lon": 77.1972
+  },
+  {
+   "id": "palamau",
+   "name": "Palamau",
+   "state": "Jharkhand",
+   "notified": 2012,
+   "areaKm2": 1129.93,
+   "lat": 23.6889,
+   "lon": 84.2489
+  },
+  {
+   "id": "ranthambore",
+   "name": "Ranthambore",
+   "state": "Rajasthan",
+   "notified": 2007,
+   "areaKm2": 1411.29,
+   "lat": 26.0172,
+   "lon": 76.5025
+  },
+  {
+   "id": "similipal",
+   "name": "Similipal",
+   "state": "Odisha",
+   "notified": 2007,
+   "areaKm2": 2750,
+   "lat": 21.8333,
+   "lon": 86.3333
+  },
+  {
+   "id": "sundarbans",
+   "name": "Sundarbans",
+   "state": "West Bengal",
+   "notified": 2007,
+   "areaKm2": 2584.89,
+   "lat": 21.8381,
+   "lon": 88.8853,
+   "displayLat": 21.86,
+   "displayLon": 88.861
+  },
+  {
+   "id": "periyar",
+   "name": "Periyar",
+   "state": "Kerala",
+   "notified": 2007,
+   "areaKm2": 925,
+   "lat": 9.5775,
+   "lon": 77.18
+  },
+  {
+   "id": "sariska",
+   "name": "Sariska",
+   "state": "Rajasthan",
+   "notified": 2007,
+   "areaKm2": 1213.34,
+   "lat": 27.3175,
+   "lon": 76.4369
+  },
+  {
+   "id": "buxa",
+   "name": "Buxa",
+   "state": "West Bengal",
+   "notified": 2009,
+   "areaKm2": 757.9,
+   "lat": 26.65,
+   "lon": 89.58
+  },
+  {
+   "id": "indravati",
+   "name": "Indravati",
+   "state": "Chhattisgarh",
+   "notified": 2009,
+   "areaKm2": 2799.07,
+   "lat": 19.205,
+   "lon": 81.0314
+  },
+  {
+   "id": "namdapha",
+   "name": "Namdapha",
+   "state": "Arunachal Pradesh",
+   "notified": 1987,
+   "areaKm2": 2052.82,
+   "lat": 27.4833,
+   "lon": 96.3833
+  },
+  {
+   "id": "nagarjunsagar-srisailam",
+   "name": "Nagarjunsagar-Srisailam",
+   "state": "Andhra Pradesh",
+   "notified": 2007,
+   "areaKm2": 3296.31,
+   "lat": 16.3,
+   "lon": 78.9833,
+   "displayLat": 16.094,
+   "displayLon": 79.007
+  },
+  {
+   "id": "dudhwa",
+   "name": "Dudhwa",
+   "state": "Uttar Pradesh",
+   "notified": 2010,
+   "areaKm2": 2201.77,
+   "lat": 28.5083,
+   "lon": 80.68
+  },
+  {
+   "id": "kalakad-mundanthurai",
+   "name": "Kalakad-Mundanthurai",
+   "state": "Tamil Nadu",
+   "notified": 2007,
+   "areaKm2": 1601.54,
+   "lat": 8.6833,
+   "lon": 77.3167
+  },
+  {
+   "id": "valmiki",
+   "name": "Valmiki",
+   "state": "Bihar",
+   "notified": 2012,
+   "areaKm2": 899.38,
+   "lat": 27.3317,
+   "lon": 84.1625
+  },
+  {
+   "id": "pench-madhya-pradesh",
+   "name": "Pench (Madhya Pradesh)",
+   "state": "Madhya Pradesh",
+   "notified": 2007,
+   "areaKm2": 1179.63,
+   "lat": 21.6931,
+   "lon": 79.2483,
+   "displayLat": 21.804,
+   "displayLon": 79.201
+  },
+  {
+   "id": "tadoba-andhari",
+   "name": "Tadoba-Andhari",
+   "state": "Maharashtra",
+   "notified": 2007,
+   "areaKm2": 1727.59,
+   "lat": 20.2667,
+   "lon": 79.4
+  },
+  {
+   "id": "bandhavgarh",
+   "name": "Bandhavgarh",
+   "state": "Madhya Pradesh",
+   "notified": 2007,
+   "areaKm2": 1536.93,
+   "lat": 23.6994,
+   "lon": 80.9619
+  },
+  {
+   "id": "panna",
+   "name": "Panna",
+   "state": "Madhya Pradesh",
+   "notified": 2007,
+   "areaKm2": 1598.1,
+   "lat": 24.7304,
+   "lon": 80.0108
+  },
+  {
+   "id": "dampa",
+   "name": "Dampa",
+   "state": "Mizoram",
+   "notified": 2007,
+   "areaKm2": 988,
+   "lat": 23.5667,
+   "lon": 92.3667
+  },
+  {
+   "id": "bhadra",
+   "name": "Bhadra",
+   "state": "Karnataka",
+   "notified": 2007,
+   "areaKm2": 1064.29,
+   "lat": 13.6955,
+   "lon": 75.6368
+  },
+  {
+   "id": "pench-maharashtra",
+   "name": "Pench (Maharashtra)",
+   "state": "Maharashtra",
+   "notified": 2007,
+   "areaKm2": 741.22,
+   "lat": 21.6931,
+   "lon": 79.2483
+  },
+  {
+   "id": "pakke",
+   "name": "Pakke",
+   "state": "Arunachal Pradesh",
+   "notified": 2012,
+   "areaKm2": 1198.45,
+   "lat": 27.0833,
+   "lon": 92.8583
+  },
+  {
+   "id": "nameri",
+   "name": "Nameri",
+   "state": "Assam",
+   "notified": 2000,
+   "areaKm2": 464,
+   "lat": 27.01,
+   "lon": 92.79
+  },
+  {
+   "id": "satpura",
+   "name": "Satpura",
+   "state": "Madhya Pradesh",
+   "notified": 2007,
+   "areaKm2": 2133.31,
+   "lat": 22.495,
+   "lon": 78.2311
+  },
+  {
+   "id": "anamalai",
+   "name": "Anamalai",
+   "state": "Tamil Nadu",
+   "notified": 2007,
+   "areaKm2": 1479.87,
+   "lat": 10.417,
+   "lon": 77.0567
+  },
+  {
+   "id": "udanti-sitanadi",
+   "name": "Udanti-Sitanadi",
+   "state": "Chhattisgarh",
+   "notified": 2009,
+   "areaKm2": 1842.54,
+   "lat": 20.1857,
+   "lon": 81.9362
+  },
+  {
+   "id": "satkosia",
+   "name": "Satkosia",
+   "state": "Odisha",
+   "notified": 2007,
+   "areaKm2": 963.87,
+   "lat": 20.54,
+   "lon": 84.8317
+  },
+  {
+   "id": "kaziranga",
+   "name": "Kaziranga",
+   "state": "Assam",
+   "notified": 2007,
+   "areaKm2": 1173.58,
+   "lat": 26.6667,
+   "lon": 93.35
+  },
+  {
+   "id": "achanakmar",
+   "name": "Achanakmar",
+   "state": "Chhattisgarh",
+   "notified": 2009,
+   "areaKm2": 914.02,
+   "lat": 22.4366,
+   "lon": 81.8385
+  },
+  {
+   "id": "kali",
+   "name": "Kali",
+   "state": "Karnataka",
+   "notified": 2007,
+   "areaKm2": 1097.51,
+   "lat": 14.9564,
+   "lon": 74.2521,
+   "displayLat": 14.91,
+   "displayLon": 74.3
+  },
+  {
+   "id": "sanjay-dubri",
+   "name": "Sanjay Dubri",
+   "state": "Madhya Pradesh",
+   "notified": 2011,
+   "areaKm2": 1674.5,
+   "lat": 23.8853,
+   "lon": 82.0553
+  },
+  {
+   "id": "mudumalai",
+   "name": "Mudumalai",
+   "state": "Tamil Nadu",
+   "notified": 2007,
+   "areaKm2": 688.59,
+   "lat": 11.6,
+   "lon": 76.5
+  },
+  {
+   "id": "nagarhole",
+   "name": "Nagarhole",
+   "state": "Karnataka",
+   "notified": 2007,
+   "areaKm2": 1205.76,
+   "lat": 12.06,
+   "lon": 76.1511
+  },
+  {
+   "id": "parambikulam",
+   "name": "Parambikulam",
+   "state": "Kerala",
+   "notified": 2009,
+   "areaKm2": 643.66,
+   "lat": 10.3833,
+   "lon": 76.7083
+  },
+  {
+   "id": "sahyadri",
+   "name": "Sahyadri",
+   "state": "Maharashtra",
+   "notified": 2012,
+   "areaKm2": 1165.57,
+   "lat": 17.4861,
+   "lon": 73.8089
+  },
+  {
+   "id": "biligiri-ranganatha-temple",
+   "name": "Biligiri Ranganatha Temple",
+   "state": "Karnataka",
+   "notified": 2007,
+   "areaKm2": 574.82,
+   "lat": 11.9939,
+   "lon": 77.1406
+  },
+  {
+   "id": "kawal",
+   "name": "Kawal",
+   "state": "Telangana",
+   "notified": 2012,
+   "areaKm2": 2015.44,
+   "lat": 18.9939,
+   "lon": 79.25
+  },
+  {
+   "id": "sathyamangalam",
+   "name": "Sathyamangalam",
+   "state": "Tamil Nadu",
+   "notified": 2013,
+   "areaKm2": 1408.4,
+   "lat": 11.64,
+   "lon": 77.2261
+  },
+  {
+   "id": "mukandra-hills",
+   "name": "Mukandra Hills",
+   "state": "Rajasthan",
+   "notified": 2013,
+   "areaKm2": 759.99,
+   "lat": 24.8681,
+   "lon": 75.8561
+  },
+  {
+   "id": "nawegaon-nagzira",
+   "name": "Nawegaon-Nagzira",
+   "state": "Maharashtra",
+   "notified": 2015,
+   "areaKm2": 1894.94,
+   "lat": 20.9333,
+   "lon": 80.1667
+  },
+  {
+   "id": "amrabad",
+   "name": "Amrabad",
+   "state": "Telangana",
+   "notified": 2015,
+   "areaKm2": 2611.39,
+   "lat": 16.38,
+   "lon": 78.83
+  },
+  {
+   "id": "pilibhit",
+   "name": "Pilibhit",
+   "state": "Uttar Pradesh",
+   "notified": 2014,
+   "areaKm2": 730.25,
+   "lat": 28.7188,
+   "lon": 80.072
+  },
+  {
+   "id": "bor",
+   "name": "Bor",
+   "state": "Maharashtra",
+   "notified": 2012,
+   "areaKm2": 816.27,
+   "lat": 20.9775,
+   "lon": 78.6758
+  },
+  {
+   "id": "rajaji",
+   "name": "Rajaji",
+   "state": "Uttarakhand",
+   "notified": 2015,
+   "areaKm2": 1075.17,
+   "lat": 30.0581,
+   "lon": 78.1728
+  },
+  {
+   "id": "orang",
+   "name": "Orang",
+   "state": "Assam",
+   "notified": 2016,
+   "areaKm2": 492.46,
+   "lat": 26.5569,
+   "lon": 92.3278
+  },
+  {
+   "id": "kamlang",
+   "name": "Kamlang",
+   "state": "Arunachal Pradesh",
+   "notified": 2017,
+   "areaKm2": 783,
+   "lat": 27.6667,
+   "lon": 96.4333
+  },
+  {
+   "id": "srivilliputhur-megamalai",
+   "name": "Srivilliputhur-Megamalai",
+   "state": "Tamil Nadu",
+   "notified": 2021,
+   "areaKm2": 1016.57,
+   "lat": 9.3939,
+   "lon": 77.3642
+  },
+  {
+   "id": "ramgarh-vishdhari",
+   "name": "Ramgarh Vishdhari",
+   "state": "Rajasthan",
+   "notified": 2022,
+   "areaKm2": 1501.9,
+   "lat": 25.9833,
+   "lon": 75.3167
+  },
+  {
+   "id": "ranipur",
+   "name": "Ranipur",
+   "state": "Uttar Pradesh",
+   "notified": 2022,
+   "areaKm2": 529.36,
+   "lat": 24.96,
+   "lon": 81.064
+  },
+  {
+   "id": "veerangana-durgavati",
+   "name": "Veerangana Durgavati",
+   "state": "Madhya Pradesh",
+   "notified": 2023,
+   "areaKm2": 2339.12,
+   "lat": 23.54,
+   "lon": 79.72
+  },
+  {
+   "id": "dholpur-karauli",
+   "name": "Dholpur-Karauli",
+   "state": "Rajasthan",
+   "notified": 2023,
+   "areaKm2": 599.64,
+   "lat": 26.5,
+   "lon": 77.02
+  },
+  {
+   "id": "guru-ghasidas-tamor-pingla",
+   "name": "Guru Ghasidas-Tamor Pingla",
+   "state": "Chhattisgarh",
+   "notified": 2024,
+   "areaKm2": 2829.38,
+   "lat": 23.6019,
+   "lon": 82.4719
+  },
+  {
+   "id": "ratapani",
+   "name": "Ratapani",
+   "state": "Madhya Pradesh",
+   "notified": 2024,
+   "areaKm2": 1271.47,
+   "lat": 22.9175,
+   "lon": 77.7222
+  },
+  {
+   "id": "madhav",
+   "name": "Madhav",
+   "state": "Madhya Pradesh",
+   "notified": 2024,
+   "areaKm2": 1751,
+   "lat": 25.5,
+   "lon": 77.8167
+  }
+ ],
+ "displayNote": "Where displayLat/displayLon exist, the map dot was moved a short distance so it sits inside the correct state on the simplified map (for example Pench's two halves share one published coordinate on a state border)."
+}

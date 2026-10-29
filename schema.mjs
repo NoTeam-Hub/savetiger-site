@@ -7,6 +7,7 @@
 
 export function schemaFor(page, cfg, ctx) {
   if (!page.schema) return null;
+  if (page.schema === "map") return mapSchema(page, cfg, ctx);
   const site = cfg.siteUrl;
   const home = `${site}/`;
   const ids = {
@@ -66,5 +67,49 @@ export function schemaFor(page, cfg, ctx) {
     },
   ];
 
+  return { "@context": "https://schema.org", "@graph": graph };
+}
+
+// Sub-pages (the maps): a WebPage + BreadcrumbList that point back to the site-wide Organization and WebSite
+// defined on the home page, plus an optional Dataset when the page is built from published figures.
+function mapSchema(page, cfg, ctx) {
+  const site = cfg.siteUrl;
+  const url = `${site}${page.path}`;
+  const crumbs = [{ name: "Home", path: "/" }, ...(page.breadcrumb || [])];
+  const graph = [
+    {
+      "@type": "WebPage",
+      "@id": `${url}#webpage`,
+      url,
+      name: page.title,
+      description: page.description,
+      inLanguage: cfg.lang,
+      isPartOf: { "@id": `${site}/#website` },
+      primaryImageOfPage: { "@type": "ImageObject", url: `${site}${cfg.ogImage}`, width: 1200, height: 630 },
+      breadcrumb: { "@id": `${url}#breadcrumb` },
+      dateModified: ctx.lastmod,
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${url}#breadcrumb`,
+      itemListElement: [
+        ...crumbs.map((c, i) => ({ "@type": "ListItem", position: i + 1, name: c.name, item: `${site}${c.path}` })),
+        { "@type": "ListItem", position: crumbs.length + 1, name: page.crumbName || page.title },
+      ],
+    },
+  ];
+  if (page.dataset) {
+    graph.push({
+      "@type": "Dataset",
+      "@id": `${url}#dataset`,
+      name: page.dataset.name,
+      description: page.dataset.description,
+      url,
+      inLanguage: cfg.lang,
+      spatialCoverage: { "@type": "Place", name: "India" },
+      isBasedOn: page.dataset.source,
+      creator: { "@id": `${site}/#organization` },
+    });
+  }
   return { "@context": "https://schema.org", "@graph": graph };
 }

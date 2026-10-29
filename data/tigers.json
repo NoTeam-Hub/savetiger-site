@@ -1,0 +1,35 @@
+{
+  "source": "Status of Tigers in India, All India Tiger Estimation, Annexure I (PIB, Government of India)",
+  "sourceUrl": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2024/nov/doc20241125451801.pdf",
+  "years": [2006, 2010, 2014, 2018, 2022],
+  "nationalTotals": [1411, 1706, 2226, 2967, 3682],
+  "landscapes": {
+    "sh": { "name": "Shivalik-Gangetic Plain", "short": "Shivalik-Gangetic", "totals": [297, 353, 485, 646, 819], "states": ["ut", "up", "br"] },
+    "ci": { "name": "Central India and Eastern Ghats", "short": "Central India", "totals": [601, 601, 688, 1033, 1439], "states": ["ap", "tg", "ct", "mp", "mh", "or", "rj", "jh"] },
+    "wg": { "name": "Western Ghats", "short": "Western Ghats", "totals": [412, 534, 776, 981, 1087], "states": ["ka", "kl", "tn", "ga"] },
+    "ne": { "name": "North-East Hills and Brahmaputra Plains", "short": "North-East", "totals": [100, 148, 201, 219, 236], "states": ["as", "ar", "mz", "nl"] },
+    "sb": { "name": "Sundarbans", "short": "Sundarbans", "totals": [null, 70, 76, 88, 101], "states": [] }
+  },
+  "states": {
+    "ut": { "name": "Uttarakhand", "v": [178, 227, 340, 442, 560], "ls": "sh" },
+    "up": { "name": "Uttar Pradesh", "v": [109, 118, 117, 173, 205], "ls": "sh" },
+    "br": { "name": "Bihar", "v": [10, 8, 28, 31, 54], "ls": "sh" },
+    "ap": { "name": "Andhra Pradesh", "v": [95, 72, 68, 48, 63], "ls": "ci" },
+    "tg": { "name": "Telangana", "v": [null, null, null, 26, 21], "ls": "ci" },
+    "ct": { "name": "Chhattisgarh", "v": [26, 26, 46, 19, 17], "ls": "ci" },
+    "mp": { "name": "Madhya Pradesh", "v": [300, 257, 308, 526, 785], "ls": "ci" },
+    "mh": { "name": "Maharashtra", "v": [103, 169, 190, 312, 444], "ls": "ci" },
+    "or": { "name": "Odisha", "v": [45, 32, 28, 28, 20], "ls": "ci" },
+    "rj": { "name": "Rajasthan", "v": [32, 36, 45, 69, 88], "ls": "ci" },
+    "jh": { "name": "Jharkhand", "v": [null, 10, 3, 5, 1], "ls": "ci" },
+    "ka": { "name": "Karnataka", "v": [290, 300, 406, 524, 563], "ls": "wg" },
+    "kl": { "name": "Kerala", "v": [46, 71, 136, 190, 213], "ls": "wg" },
+    "tn": { "name": "Tamil Nadu", "v": [76, 163, 229, 264, 306], "ls": "wg" },
+    "ga": { "name": "Goa", "v": [null, null, 5, 3, 5], "ls": "wg" },
+    "as": { "name": "Assam", "v": [70, 143, 167, 190, 229], "ls": "ne" },
+    "ar": { "name": "Arunachal Pradesh", "v": [14, null, 28, 29, 9], "ls": "ne" },
+    "mz": { "name": "Mizoram", "v": [6, 5, 3, 0, 0], "ls": "ne" },
+    "nl": { "name": "Nagaland", "v": [null, null, null, 0, 0], "ls": "ne" },
+    "wb": { "name": "West Bengal", "v": [10, 70, 79, 88, 103], "ls": "ne", "note": "Northern West Bengal (10, none reported, 3, 0, 2) plus the Sundarbans (none reported, 70, 76, 88, 101)." }
+  }
+}

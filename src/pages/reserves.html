@@ -1,0 +1,53 @@
+<!--#include shell-top-->
+  <section class="section">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/maps/">Maps</a><span aria-hidden="true">/</span><span aria-current="page">Tiger reserves</span></nav>
+      <p class="eyebrow">Map 1</p>
+      <h1 class="ph">Tiger reserves of India</h1>
+      <p class="lede">India has {{RESERVE_COUNT}} tiger reserves in {{RESERVE_STATE_COUNT}} states, together notified over about {{RESERVE_AREA}} square kilometres. Project Tiger began in 1973 with nine reserves. Select a dot, or pick a state, to see the details.</p>
+
+      <div class="map-tools">
+        <label for="state-filter">State</label>
+        <select id="state-filter"><option value="">All states</option>{{RESERVE_STATE_OPTIONS}}</select>
+        <span class="count" id="shown" aria-live="polite">Showing {{RESERVE_COUNT}} of {{RESERVE_COUNT}}</span>
+      </div>
+
+      <div class="map-layout" data-map="reserves">
+        <div class="map-card">
+          <div class="zoom" role="group" aria-label="Zoom">
+            <button type="button" data-zoom="in" aria-label="Zoom in">+</button>
+            <button type="button" data-zoom="out" aria-label="Zoom out">&minus;</button>
+            <button type="button" data-zoom="reset" aria-label="Reset zoom">&#8634;</button>
+          </div>
+          {{MAP_RESERVES}}
+          <ul class="legend inline"><li><span class="sw ls-sh"></span>Shivalik-Gangetic</li><li><span class="sw ls-ci"></span>Central India</li><li><span class="sw ls-wg"></span>Western Ghats</li><li><span class="sw ls-ne"></span>North-East</li><li><span class="sw ls-sb"></span>Sundarbans</li></ul>
+          <p class="hint">Bigger dot = larger notified area.</p>
+        </div>
+        <aside class="map-panel" id="panel" aria-live="polite" aria-label="Selected reserve">
+          <p class="panel-empty">Select a reserve on the map or in the table.</p>
+          <div class="panel-body" hidden>
+            <p class="eyebrow" data-f="ls"></p>
+            <h2 data-f="name"></h2>
+            <dl>
+              <div><dt>State</dt><dd data-f="state"></dd></div>
+              <div><dt>Notified</dt><dd data-f="notified"></dd></div>
+              <div><dt>Area</dt><dd><span data-f="area"></span> km&sup2;</dd></div>
+            </dl>
+          </div>
+        </aside>
+      </div>
+
+      <h2 class="h-gap">All reserves</h2>
+      <div class="table-scroll">
+        <table class="data-table res-table" id="res-table">
+          <caption>Tiger reserves of India, with the year each was notified and its total notified area</caption>
+          <thead><tr><th scope="col">Reserve</th><th scope="col">State</th><th scope="col">Notified</th><th scope="col" class="num">Area (km&sup2;)</th><th scope="col">Landscape</th></tr></thead>
+          <tbody>{{RESERVE_ROWS}}</tbody>
+        </table>
+      </div>
+      <p class="note">Reserve list as of {{RESERVE_ASOF}}, compiled from the National Tiger Conservation Authority's list of tiger reserves (see <a href="https://en.wikipedia.org/wiki/List_of_tiger_reserves_of_India" target="_blank" rel="noopener noreferrer">the public list</a>). Pench is split across two states and appears twice. Landscape follows the state grouping used in the national census.</p>
+      <!--#include map-disclaimer-->
+      <!--#include map-more-->
+    </div>
+  </section>
+<!--#include shell-bottom-->

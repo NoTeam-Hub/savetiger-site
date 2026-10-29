@@ -1,0 +1,23 @@
+<!--#include shell-top-->
+  <section class="section">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/maps/">Maps</a><span aria-hidden="true">/</span><span aria-current="page">Tiger landscapes</span></nav>
+      <p class="eyebrow">Map 3</p>
+      <h1 class="ph">India's tiger landscapes</h1>
+      <p class="lede">Tigers do not stop at state borders, so the national census groups them into five landscapes. Central India now holds the most, and every landscape has grown since 2006. Select a landscape to highlight it.</p>
+
+      <div class="map-layout" data-map="landscapes">
+        <div class="map-card">
+          {{MAP_LANDSCAPES}}
+          <ul class="legend inline ls-legend" aria-label="Landscapes">{{LANDSCAPE_LEGEND}}</ul>
+          <p class="hint">States are shaded by the landscape the census assigns them to. Dots are tiger reserves.</p>
+        </div>
+        <div class="ls-cards">{{LANDSCAPE_CARDS}}</div>
+      </div>
+
+      <p class="note">Landscape totals are the official 2022 estimates (bars show 2006, 2010, 2014, 2018 and 2022; the Sundarbans were first reported in 2010). The census assigns whole states to a landscape, so state shading is a simplification: real landscapes cross state lines, and northern West Bengal is counted with the North-East. Source: <a href="https://static.pib.gov.in/WriteReadData/specificdocs/documents/2024/nov/doc20241125451801.pdf" target="_blank" rel="noopener noreferrer">Press Information Bureau, Annexure I</a>. The published North-East subtotal (236) is a little below the sum of its state rows (240); we show the published figure.</p>
+      <!--#include map-disclaimer-->
+      <!--#include map-more-->
+    </div>
+  </section>
+<!--#include shell-bottom-->
