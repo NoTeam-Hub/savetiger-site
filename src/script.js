@@ -321,7 +321,24 @@
         card.appendChild(btn);
         stickersEl.appendChild(card);
       });
+      fit();
     }
+
+    // Only the first row of stickers is visible until "Show more" is pressed.
+    var moreBtn = document.getElementById('stickers-toggle');
+    var expanded = false;
+    function fit() {
+      var cards = stickersEl.children;
+      var cols = getComputedStyle(stickersEl).gridTemplateColumns.split(' ').length || 1;
+      for (var i = 0; i < cards.length; i++) cards[i].hidden = !expanded && i >= cols;
+      if (moreBtn) {
+        moreBtn.hidden = cards.length <= cols;
+        moreBtn.textContent = expanded ? 'Show fewer stickers' : 'Show ' + (cards.length - cols) + ' more stickers';
+        moreBtn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+      }
+    }
+    if (moreBtn) moreBtn.addEventListener('click', function () { expanded = !expanded; fit(); });
+    window.addEventListener('resize', fit);
 
     document.querySelectorAll('.theme-switch button').forEach(function (b) {
       b.addEventListener('click', function () {

@@ -209,6 +209,7 @@
       </div>
 
       <div id="stickers" class="stickers"></div>
+      <p class="stickers-more"><button type="button" class="btn btn-ghost" id="stickers-toggle" aria-expanded="false" aria-controls="stickers" hidden>Show more stickers</button></p>
       <p class="sr-only" id="copy-status" role="status" aria-live="polite"></p>
     </div>
   </section>
@@ -218,7 +219,10 @@
     <div class="wrap">
       <p class="eyebrow">Sources</p>
       <h2>Where the numbers come from</h2>
-      <ul class="sources">
+      <details class="legal-item sources-fold">
+        <summary><svg class="legal-paw" viewBox="0 0 64 64" aria-hidden="true"><use href="#paw" width="64" height="64"/></svg>Show all 6 sources</summary>
+        <div class="legal-body">
+        <ul class="sources">
         <li><a href="https://static.pib.gov.in/WriteReadData/specificdocs/documents/2024/nov/doc20241125451801.pdf" target="_blank" rel="noopener noreferrer">Press Information Bureau, Annexure: tiger estimates by state, 2006–2022</a></li>
         <li><a href="https://rsdebate.nic.in/bitstream/123456789/754721/1/PQ_266_05122024_U1160_p148_p151.pdf" target="_blank" rel="noopener noreferrer">Ministry of Environment, Forest and Climate Change, parliamentary answer (Dec 2024): 3,682 tigers, range 3,167–3,925</a></li>
         <li><a href="https://ntca.gov.in/about-us/" target="_blank" rel="noopener noreferrer">National Tiger Conservation Authority: About us</a></li>
@@ -226,6 +230,8 @@
         <li><a href="https://moef.gov.in/uploads/2022/11/Wildlife-Toll-Free-Number-09112022.pdf" target="_blank" rel="noopener noreferrer">MoEFCC notice (Nov 2022): toll-free number for wildlife crime</a></li>
         <li><a href="https://www.wwfindia.org/about_wwf/priority_species/bengal_tiger/work_for_tiger" target="_blank" rel="noopener noreferrer">WWF-India: work for tiger conservation</a></li>
       </ul>
+        </div>
+      </details>
       <p class="note">Latest completed national estimate: 2022. Figures are estimates with statistical uncertainty. This is an independent awareness project and is not affiliated with any government body or organisation listed above.</p>
     </div>
   </section>
