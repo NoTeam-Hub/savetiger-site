@@ -270,3 +270,9 @@ a.link-card:hover { transform: translateY(-3px); border-color: var(--amber); col
 .stickers-more .btn { cursor: pointer; background: none; font: inherit; font-weight: 700; }
 .sources-fold { max-width: 80ch; }
 .sources-fold .sources { margin: 0; }
+
+/* Logo: glowing tiger eyes above "SAVE THE" */
+.brand-eyes { width: 92px; height: auto; display: block; margin: 0 0 1px -4px; overflow: visible; }
+.brand-mark { width: 46px; height: 36px; }
+@media (max-width: 380px) { .brand-eyes { width: 80px; } }
+.nf-eyes { width: min(260px, 70%); height: auto; display: block; margin: 0 0 18px; overflow: visible; }

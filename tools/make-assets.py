@@ -160,6 +160,12 @@ for i, (x, y, s) in enumerate([(480, 70, 84), (620, 20, 84), (760, 80, 84), (900
 draw_paw(og, 230, 80, 150)
 draw_paw(og, 120, 250, 70, opacity=0.35, stripes=False)
 d = ImageDraw.Draw(og)
+# glowing eyes above "SAVE THE" (tools/eyes.png is rendered from tools/eyes.svg)
+eyes_png = os.path.join(ROOT, "tools", "eyes.png")
+if os.path.exists(eyes_png):
+    ey = Image.open(eyes_png).convert("RGBA")
+    ey = ey.resize((560, int(560 * ey.height / ey.width)), Image.LANCZOS)
+    og.paste(ey, (340, 60), ey)
 spaced(d, (360, 190), "SAVE THE", font(44), MUTED, 10)
 # gradient "TIGERS"
 txt_layer = Image.new("L", (W, H), 0)
