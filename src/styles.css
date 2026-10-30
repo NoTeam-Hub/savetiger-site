@@ -258,18 +258,10 @@ a.link-card:hover { transform: translateY(-3px); border-color: var(--amber); col
 .nf h1 { max-width: none; font-size: clamp(2rem, 6vw, 3.2rem); }
 .nf .lede { margin: 0; }
 
-/* Hover lift on every box (motion only when the visitor allows it) */
-.stat, .threat, .link-card, .chart-card, .hero-stat, .sticker-card, .support-card { transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
-.stat:hover, .threat:hover, .link-card:hover, .chart-card:hover, .hero-stat:hover, .sticker-card:hover, .support-card:hover { border-color: var(--amber); box-shadow: 0 10px 28px rgba(255,154,31,.14); }
-@media (prefers-reduced-motion: no-preference) {
-  .stat:hover, .threat:hover, .link-card:hover, .sticker-card:hover { transform: translateY(-4px); }
-}
-
-.sticker-card[hidden] { display: none; }
-.stickers-more { margin: 18px 0 0; text-align: center; }
-.stickers-more .btn { cursor: pointer; background: none; font: inherit; font-weight: 700; }
-.sources-fold { max-width: 80ch; }
-.sources-fold .sources { margin: 0; }
+/* Hover effect only on the "Take action" boxes */
+#action .link-card { transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
+#action .link-card:hover { border-color: var(--amber); box-shadow: 0 10px 28px rgba(255,154,31,.14); }
+@media (prefers-reduced-motion: no-preference) { #action .link-card:hover { transform: translateY(-4px); } }
 
 /* Logo: glowing tiger eyes above "SAVE THE" */
 .brand-eyes { width: 92px; height: auto; display: block; margin: 0 0 1px -4px; overflow: visible; }

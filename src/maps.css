@@ -130,6 +130,4 @@ svg.map { display: block; width: 100%; height: auto; max-height: 82vh; touch-act
 .state-table td.cur, .state-table th.cur { background: rgba(255,154,31,.1); }
 .state-table tfoot th, .state-table tfoot td { border-top: 2px solid var(--line); font-weight: 800; }
 
-.map-card, .map-panel { transition: border-color .18s ease, box-shadow .18s ease; }
-.map-card:hover, .map-panel:hover, .ls-card:hover { border-color: var(--amber); box-shadow: 0 10px 28px rgba(255,154,31,.14); }
 @media (prefers-reduced-motion: no-preference) { .ls-card:hover, .more-maps a:hover { transform: translateY(-4px); } .ls-card, .more-maps a { transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease; } }
