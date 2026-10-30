@@ -268,3 +268,4 @@ a.link-card:hover { transform: translateY(-3px); border-color: var(--amber); col
 .brand-mark { width: 46px; height: 36px; }
 @media (max-width: 380px) { .brand-eyes { width: 80px; } }
 .nf-eyes { width: min(260px, 70%); height: auto; display: block; margin: 0 0 18px; overflow: visible; }
+.support-copy .support-maker { font-size: 13px; color: var(--muted); margin: 10px 0 0; }
