@@ -269,3 +269,10 @@ a.link-card:hover { transform: translateY(-3px); border-color: var(--amber); col
 @media (max-width: 380px) { .brand-eyes { width: 80px; } }
 .nf-eyes { width: min(260px, 70%); height: auto; display: block; margin: 0 0 18px; overflow: visible; }
 .support-copy .support-maker { font-size: 13px; color: var(--muted); margin: 10px 0 0; }
+
+/* Collapsed stickers and sources (hidden must beat display:flex / inline-block) */
+[hidden] { display: none !important; }
+.stickers-more { margin: 18px 0 0; text-align: center; }
+.stickers-more .btn { cursor: pointer; background: none; font: inherit; font-weight: 700; }
+.sources-fold { max-width: 80ch; }
+.sources-fold .sources { margin: 0; }
