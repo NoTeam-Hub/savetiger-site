@@ -276,3 +276,35 @@ a.link-card:hover { transform: translateY(-3px); border-color: var(--amber); col
 .stickers-more .btn { cursor: pointer; background: none; font: inherit; font-weight: 700; }
 .sources-fold { max-width: 80ch; }
 .sources-fold .sources { margin: 0; }
+
+/* Next-census teaser and timeline */
+.next-card { margin-top: 28px; padding: 24px 26px; border: 1px dashed var(--amber); border-radius: var(--radius); background: rgba(255,154,31,.05); }
+.next-card h3 { margin: 0 0 8px; font-size: 1.35rem; }
+.next-card p { color: var(--muted); max-width: 70ch; }
+.next-card .eyebrow { margin-bottom: 8px; }
+.tl { list-style: none; margin: 30px 0 12px; padding: 0; display: grid; grid-template-columns: repeat(7, 1fr); gap: 0; position: relative; }
+.tl li { position: relative; padding-top: 26px; text-align: center; }
+.tl li::before { content: ""; position: absolute; top: 6px; left: 0; right: 0; height: 3px; background: var(--line); }
+.tl li::after { content: ""; position: absolute; top: 0; left: 50%; width: 15px; height: 15px; margin-left: -7px; border-radius: 50%; background: var(--amber); border: 3px solid var(--bg); }
+.tl li:first-child::before { left: 50%; } .tl li:last-child::before { right: 50%; }
+.tl li.done::before { background: var(--amber); }
+.tl li.now::after { background: #fff; box-shadow: 0 0 0 5px rgba(255,154,31,.35); }
+.tl li.next::after { background: var(--bg); border: 3px dashed var(--amber); }
+.tl b { display: block; font-size: 1.05rem; } .tl span { display: block; font-size: 13px; color: var(--muted); padding: 0 4px; }
+.tl-note { margin-top: 6px; }
+ul.plain { padding-left: 20px; display: grid; gap: 10px; max-width: 80ch; color: var(--muted); } ul.plain strong { color: var(--text); }
+@media (max-width: 640px) {
+  .tl { grid-template-columns: 1fr; gap: 6px; margin-left: 6px; }
+  .tl li { text-align: left; padding: 0 0 8px 34px; }
+  .tl li::before { top: 0; bottom: 0; left: 7px; right: auto; width: 3px; height: auto; }
+  .tl li::after { left: 0; top: 2px; margin-left: 0; }
+  .tl li:first-child::before { top: 8px; left: 7px; } .tl li:last-child::before { bottom: 50%; right: auto; left: 7px; }
+}
+
+/* Sub-page basics (also used by the map pages) */
+.crumbs { display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px; color: var(--muted); margin-bottom: 18px; }
+.crumbs a { color: var(--muted); }
+.crumbs a:hover { color: var(--amber); }
+.crumbs [aria-current] { color: var(--text); }
+h1.ph { font-size: clamp(2rem, 5vw, 3.2rem); max-width: 22ch; }
+.h-gap { margin-top: 56px; }

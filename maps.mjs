@@ -172,6 +172,7 @@ export async function loadMaps(root) {
   vars.STATE_HEAD = years.map((y) => `<th scope="col" class="num">${y}</th>`).join("");
   vars.STATE_TOTAL = tigers.nationalTotals.map((n) => `<td class="num">${fmt(n)}</td>`).join("");
   vars.YEARS_JSON = JSON.stringify(years);
+  for (const k of ["mp", "ka", "ut", "mh"]) vars[k.toUpperCase() + "_2022"] = fmt(tigers.states[k].v[idx]);
   vars.TOP_STATE = esc(stateList[0][1].name);
   vars.TOP_STATE_N = fmt(stateList[0][1].v[idx]);
 

@@ -110,6 +110,20 @@
       }
     },
     {
+      "path": "/tiger-census-2026/",
+      "src": "pages/census.html",
+      "out": "tiger-census-2026/index.html",
+      "assetBase": "/",
+      "title": "India Tiger Census 2026: What to Expect | Save The Tigers",
+      "ogTitle": "India's 2026 tiger census: how it works and what to expect",
+      "description": "India's sixth national tiger count is under way. How the estimate works, what has been reported, when results may come, and what the numbers will mean.",
+      "ogType": "article",
+      "indexable": true,
+      "schema": "map",
+      "breadcrumb": [],
+      "crumbName": "Tiger census 2026"
+    },
+    {
       "path": "/404.html",
       "src": "404.html",
       "out": "404.html",
