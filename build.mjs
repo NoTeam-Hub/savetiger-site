@@ -153,6 +153,7 @@ for (const page of cfg.pages) {
   }
   html = html.replace("<!--#inline-css-->", () => css + (page.maps ? mapsCss : ""));
   html = cond(html, "maps", !!page.maps);
+  html = cond(html, "home", page.path === "/");
 
   html = cond(html, "indexable", page.indexable);
   html = cond(html, "counter", !!gc);
