@@ -395,26 +395,4 @@
     if (thanksClose) thanksClose.addEventListener('click', closeThanks);
     thanks.addEventListener('click', function (e) { if (e.target === thanks) closeThanks(); });
   }
-
-  /* ---------- seasonal wish popup (shown only inside its date window, home page only) ---------- */
-  (function () {
-    var dw = document.getElementById('diwali');
-    if (!dw || typeof dw.showModal !== 'function') return;
-    var from = new Date(dw.getAttribute('data-from') + 'T00:00:00+05:30');
-    var until = new Date(dw.getAttribute('data-until') + 'T23:59:59+05:30');
-    var now = new Date();
-    if (now < from || now > until) { dw.remove(); return; }
-    var lastFocus = null;
-    function open() { lastFocus = document.activeElement; dw.showModal(); }
-    function shut() { dw.close(); if (lastFocus && lastFocus.focus) lastFocus.focus(); }
-    dw.addEventListener('click', function (e) { if (e.target === dw || e.target.closest('[data-close]')) shut(); });
-    var shareBtn = document.getElementById('dw-share');
-    if (shareBtn) shareBtn.addEventListener('click', function () {
-      var url = (document.querySelector('link[rel="canonical"]') || {}).href || location.href;
-      var text = 'Happy Diwali! May India\'s tigers keep prowling free. Light a lamp for the wild.';
-      if (navigator.share) navigator.share({ title: 'Happy Diwali from SAVE THE TIGERS', text: text, url: url }).catch(function () {});
-      else if (navigator.clipboard) navigator.clipboard.writeText(text + ' ' + url).then(function () { shareBtn.textContent = 'Link copied'; }, function () {});
-    });
-    setTimeout(open, 1200);
-  })();
 })();
