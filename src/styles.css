@@ -311,7 +311,7 @@ h1.ph { font-size: clamp(2rem, 5vw, 3.2rem); max-width: 22ch; }
 
 
 /* News strip under the hero */
-.news { padding: 8px 0 44px; }
+.news { padding: 72px 0 8px; }
 .news-head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 10px 28px; margin-bottom: 18px; }
 .news-head h2 { margin: 0; font-size: clamp(1.4rem, 3vw, 1.9rem); }
 .news-note { margin: 0; max-width: 44ch; font-size: 13px; color: var(--muted); }
