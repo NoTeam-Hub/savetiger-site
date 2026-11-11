@@ -17,6 +17,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { schemaFor } from "./schema.mjs";
 import { loadMaps } from "./maps.mjs";
+import { loadNews } from "./news.mjs";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const SRC = path.join(ROOT, "src");
@@ -91,6 +92,7 @@ await mkdir(path.join(DIST, "assets"), { recursive: true });
 const css = (await transform(await read(path.join(SRC, "styles.css")), { loader: "css", minify: true })).code.trim();
 const mapsCss = (await transform(await read(path.join(SRC, "maps.css")), { loader: "css", minify: true })).code.trim();
 const mapVars = await loadMaps(ROOT);
+const news = await loadNews(ROOT);
 const js = await build({
   entryPoints: [path.join(SRC, "script.js")],
   bundle: true,
@@ -154,6 +156,7 @@ for (const page of cfg.pages) {
   html = html.replace("<!--#inline-css-->", () => css + (page.maps ? mapsCss : ""));
   html = cond(html, "maps", !!page.maps);
   html = cond(html, "home", page.path === "/");
+  html = cond(html, "news", page.path === "/" && news.hasNews);
 
   html = cond(html, "indexable", page.indexable);
   html = cond(html, "counter", !!gc);
@@ -165,6 +168,7 @@ for (const page of cfg.pages) {
   const vars = {
     ...siteVars,
     ...mapVars,
+    ...news.vars,
     HOME: page.path === "/" ? "" : "/",
     MAPS_CURRENT: page.section === "maps" ? ' aria-current="page"' : "",
     MAPS_JS_FILE: mapsJsFile,

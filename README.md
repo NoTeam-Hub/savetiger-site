@@ -135,3 +135,6 @@ Write original text of at least a few hundred words on each; thin pages do not h
 ## Lighthouse
 
 Run it from Chrome DevTools or PageSpeed Insights on the deployed site. This project is built to score at or near 100, but a perfect score is not guaranteed on every run or host. Hosts that cannot set cache and security headers (including GitHub Pages) can cost a few points, and a third-party counter script adds a small amount of work.
+
+## Tiger news strip
+A daily GitHub Action runs `tools/fetch-news.mjs` (public Google News RSS, headline/source/date/link only) and writes `data/news.json` before the build. If the fetch fails, the last saved file is used; with no items the section is hidden.
