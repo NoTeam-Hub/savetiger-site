@@ -1,7 +1,8 @@
 // Fetches recent tiger-in-India headlines from public Google News RSS searches
 // and writes data/news.json. Headline, source name, date and link only.
 // If anything fails, the existing data/news.json is left untouched.
-import { readFile, writeFile } from "node:fs/promises";
+import { writeFile } from "node:fs/promises";
+import { isTigerNews } from "./news-filter.mjs";
 
 const OUT = new URL("../data/news.json", import.meta.url);
 const QUERIES = [
@@ -9,8 +10,6 @@ const QUERIES = [
   "tiger reserve India when:14d",
   "Project Tiger NTCA when:30d",
 ];
-const MUST = /\btigers?\b|\btigress\b/i;
-const NOISE = /\b(IPL|cricket|Tiger Shroff|Tiger Woods|Tigers? (?:vs|beat|win)|Detroit Tigers|Leicester|Hull City|Tigers? Cricket)\b/i;
 const MAX = 6;
 
 const dec = (s) => s.replace(/<!\[CDATA\[|\]\]>/g, "").replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&#39;|&apos;/g, "'").trim();
@@ -33,7 +32,7 @@ async function one(q) {
 
 try {
   const all = (await Promise.all(QUERIES.map(one))).flat()
-    .filter((i) => i.title && i.url && i.date && i.source && MUST.test(i.title) && !NOISE.test(i.title));
+    .filter((i) => i.title && i.url && i.date && i.source && isTigerNews(i));
   const seen = new Set();
   const items = all.sort((a, b) => b.date.localeCompare(a.date)).filter((i) => {
     const k = i.title.toLowerCase().replace(/[^a-z0-9]+/g, " ").slice(0, 60);
