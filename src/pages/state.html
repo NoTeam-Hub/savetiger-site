@@ -1,0 +1,37 @@
+<!--#include shell-top-->
+  <section class="section">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/maps/">Maps</a><span aria-hidden="true">/</span><a href="/tiger-population-by-state/">Tigers by state</a><span aria-hidden="true">/</span><span aria-current="page">{{STATE_NAME}}</span></nav>
+      <p class="eyebrow">Tigers by state</p>
+      <h1 class="ph">Tigers in {{STATE_NAME}}</h1>
+      <p class="lede">{{STATE_LEDE}}</p>
+
+      <div class="st-top">
+        <div class="st-tiles">{{STATE_TILES}}</div>
+        <div class="sm-card">{{STATE_MAP}}</div>
+      </div>
+
+      <h2 class="h-gap">How the estimate has changed</h2>
+      <div class="st-chart-wrap">{{STATE_CHART}}</div>
+      <div class="table-scroll">
+        <table class="data-table">
+          <caption>All India Tiger Estimation figures for {{STATE_NAME}}</caption>
+          <thead><tr><th scope="col">Year</th><th scope="col" class="num">{{STATE_NAME}}</th><th scope="col" class="num">Change on previous</th><th scope="col" class="num">India (published total)</th></tr></thead>
+          <tbody>{{STATE_TABLE_ROWS}}</tbody>
+        </table>
+      </div>
+      <ul class="plain st-notes">{{STATE_NOTES}}</ul>
+
+      <h2 class="h-gap">Landscape and tiger reserves</h2>
+      {{STATE_LANDSCAPE}}
+      {{STATE_RESERVES}}
+
+      <p class="note">Source: <a href="{{STATE_SOURCE_URL}}" target="_blank" rel="noopener noreferrer">Status of Tigers in India, All India Tiger Estimation, Annexure I (Press Information Bureau, Government of India)</a>. Reserve details come from the tiger reserves list on this site. We never publish the locations of individual tigers.</p>
+
+      <nav class="st-nav" aria-label="Other states"><span>{{STATE_PREV}}</span><a href="/tiger-population-by-state/">All states on the map</a><span>{{STATE_NEXT}}</span></nav>
+      <h2 class="h-gap">Tigers in other states</h2>
+      <ul class="st-all">{{STATE_ALL}}</ul>
+      <!--#include map-disclaimer-->
+    </div>
+  </section>
+<!--#include shell-bottom-->

@@ -1,0 +1,18 @@
+[
+  { "q": "How many wild tigers are in India?",
+    "a": "The latest All India Tiger Estimation, for 2022, put India's wild tiger population at {{TOTAL}}, with a statistical range of 3,167 to 3,925. That is up from {{FIRST}} in 2006, an increase of {{PCT}}%. See the <a href=\"#trend\">trend chart</a> and the <a href=\"/tiger-population-by-state/\">state-by-state numbers</a>." },
+  { "q": "Which Indian state has the most tigers?",
+    "a": "{{TOP1}} had the most in 2022, with {{TOP1N}} tigers, followed by {{TOP2}} ({{TOP2N}}), {{TOP3}} ({{TOP3N}}) and {{TOP4}} ({{TOP4N}}). Open any state on the <a href=\"/tiger-population-by-state/\">tigers by state</a> page for its full history." },
+  { "q": "How many tiger reserves are there in India?",
+    "a": "There are {{RESERVES}} tiger reserves on our list, as of {{ASOF}}. You can search them and see them on a map on the <a href=\"/tiger-reserves-india/\">tiger reserves page</a>." },
+  { "q": "When was India's last tiger census, and when is the next one?",
+    "a": "The latest published figures are from the 2022 All India Tiger Estimation. The sixth count is under way, with ground surveys reported to have started in November 2025. There is no confirmed release date: reports have pointed to 2026 and, more recently, to around mid-2027. See <a href=\"/tiger-census-2026/\">what to expect from the next tiger census</a>." },
+  { "q": "Is the tiger India's national animal?",
+    "a": "Yes. The Bengal tiger is India's national animal." },
+  { "q": "Are tigers endangered?",
+    "a": "Yes. The IUCN Red List classifies the tiger as Endangered. India's numbers have risen since 2006, but the recovery is uneven: Mizoram and Nagaland each recorded no tigers in the 2018 and 2022 estimates." },
+  { "q": "What are the biggest threats to tigers in India?",
+    "a": "Habitat loss and fragmentation, poaching and illegal wildlife trade, and conflict between people and tigers. Read more in <a href=\"#threats\">what tigers still face</a>." },
+  { "q": "How can I help save tigers?",
+    "a": "Support organisations doing the work, travel responsibly, and report suspected poaching or illegal wildlife trade to your local forest department. Ideas and links are in the <a href=\"#action\">Take action</a> section. You can also <a href=\"/wallpapers/\">download free tiger wallpapers</a> to help spread the word." }
+]

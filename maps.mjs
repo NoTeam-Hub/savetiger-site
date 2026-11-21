@@ -4,6 +4,7 @@
 
 import { readFile } from "node:fs/promises";
 import path from "node:path";
+import { statePath } from "./states.mjs";
 
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const fmt = (n) => Number(n).toLocaleString("en-IN");
@@ -166,7 +167,7 @@ export async function loadMaps(root) {
   vars.STATE_ROWS = stateList
     .map(([id, s]) => {
       const cells = s.v.map((n) => `<td class="num">${n === null ? "&ndash;" : fmt(n)}</td>`).join("");
-      return `<tr data-s="${id}"><th scope="row">${esc(s.name)}${s.note ? `<sup><a href="#note-wb" aria-label="note">*</a></sup>` : ""}</th>${cells}</tr>`;
+      return `<tr data-s="${id}"><th scope="row"><a href="${statePath(s.name)}">${esc(s.name)}</a>${s.note ? `<sup><a href="#note-wb" aria-label="note">*</a></sup>` : ""}</th>${cells}</tr>`;
     })
     .join("");
   vars.STATE_HEAD = years.map((y) => `<th scope="col" class="num">${y}</th>`).join("");
@@ -265,5 +266,13 @@ export async function loadMaps(root) {
   vars.MAP_CREDIT = esc(india.credit.replace(/\s+https?:\S+/, ""));
   vars.MAP_CREDIT_URL = india.creditUrl;
 
+  // one-state highlight map for the per-state pages (static, no script)
+  vars.stateMap = (sid) => {
+    const name = india.locations.find((l) => l.id === sid)?.name || sid;
+    const paths = shapes.map((sh) => `<path class="st${sh.id === sid ? " on" : ""}" d="${sh.d}"/>`).join("");
+    const pts = reserves.filter((r) => r.sid === sid).map((r) => `<g class="dot" transform="translate(${r.x} ${r.y})"><circle r="${Math.max(2.4, r.rad * 0.7)}"/></g>`).join("");
+    return `<svg class="sm" viewBox="${india.viewBox}" role="img" aria-label="Map of India with ${esc(name)} highlighted" focusable="false">${paths}${pts}</svg>`;
+  };
+  vars.STATE_LINKS = Object.values(tigers.states).map((t) => t.name).sort((a, b) => a.localeCompare(b)).map((n) => `<li><a href="${statePath(n)}">${esc(n)}</a></li>`).join("");
   return vars;
 }

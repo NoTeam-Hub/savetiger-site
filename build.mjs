@@ -18,6 +18,8 @@ import { fileURLToPath } from "node:url";
 import { schemaFor } from "./schema.mjs";
 import { loadMaps } from "./maps.mjs";
 import { loadNews } from "./news.mjs";
+import { buildStatePages } from "./states.mjs";
+import { loadFaq } from "./faq.mjs";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const SRC = path.join(ROOT, "src");
@@ -93,6 +95,9 @@ const css = (await transform(await read(path.join(SRC, "styles.css")), { loader:
 const mapsCss = (await transform(await read(path.join(SRC, "maps.css")), { loader: "css", minify: true })).code.trim();
 const mapVars = await loadMaps(ROOT);
 const news = await loadNews(ROOT);
+const faq = await loadFaq(ROOT);
+const statePages = await buildStatePages(ROOT, mapVars.stateMap);
+cfg.pages.splice(cfg.pages.findIndex((p) => p.path === "/404.html"), 0, ...statePages.pages);
 const js = await build({
   entryPoints: [path.join(SRC, "script.js")],
   bundle: true,
@@ -162,13 +167,14 @@ for (const page of cfg.pages) {
   html = cond(html, "counter", !!gc);
   html = cond(html, "nocounter", !gc);
 
-  const schema = schemaFor(page, cfg, { lastmod });
+  const schema = schemaFor(page, cfg, { lastmod, faq: faq.items });
   const jsonld = schema ? `<script type="application/ld+json">${JSON.stringify(schema)}</script>` : "";
   const canonical = `${cfg.siteUrl}${page.path}`;
   const vars = {
     ...siteVars,
     ...mapVars,
     ...news.vars,
+    FAQ_ITEMS: faq.html,
     HOME: page.path === "/" ? "" : "/",
     MAPS_CURRENT: page.section === "maps" ? ' aria-current="page"' : "",
     MAPS_JS_FILE: mapsJsFile,
@@ -188,6 +194,7 @@ for (const page of cfg.pages) {
     GC_CODE: gc,
     YEAR: year,
     JSONLD: "@@JSONLD@@",
+    ...(page.vars || {}),
   };
   html = fill(html, vars, page.src).split("@@JSONLD@@").join(jsonld);
 

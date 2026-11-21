@@ -67,6 +67,13 @@ export function schemaFor(page, cfg, ctx) {
     },
   ];
 
+  if (ctx.faq && ctx.faq.length) {
+    graph.push({
+      "@type": "FAQPage",
+      "@id": `${site}/#faq`,
+      mainEntity: ctx.faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.text } })),
+    });
+  }
   return { "@context": "https://schema.org", "@graph": graph };
 }
 
